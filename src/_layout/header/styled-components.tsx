@@ -5,6 +5,7 @@ const HeaderComponent = styled.div`
   height: 60px;
   color: white;
   position: fixed;
+ 
   background: linear-gradient(to right,  #8e2de2, #4a00e0);
   display: flex;
   flex-direction: row;
