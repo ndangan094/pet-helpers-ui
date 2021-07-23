@@ -20,7 +20,7 @@ const Header: React.FC = () => {
                     <ActionButton>
                         <Link href={`/login`}>Login</Link>
                     </ActionButton>
-                    <ActionButton> <Link href={`/sign-up`}>Sign Up</Link>
+                    <ActionButton> <Link href={`/signup`}>Sign Up</Link>
                     </ActionButton>
                 </Action>
             </HeaderComponent>

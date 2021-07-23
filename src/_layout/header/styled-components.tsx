@@ -10,6 +10,7 @@ const HeaderComponent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 999;
 `;
 
 const Logo = styled.div`
