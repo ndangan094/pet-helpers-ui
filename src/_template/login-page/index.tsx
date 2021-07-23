@@ -4,13 +4,15 @@ import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
 import { Container } from "./styled-components";
 import globalStyles from "./style.js";
-import {router} from 'next/client'
+import {useRouter} from "next/router";
 import { useState } from "react";
 
 
 const LoginPageTemplate = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
