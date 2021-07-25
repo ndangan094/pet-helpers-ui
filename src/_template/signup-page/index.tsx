@@ -43,7 +43,7 @@ const SignUpPageTemplate = () => {
       })
     };
     try {
-      const fetchResponse = await fetch(`${baseUrl}/register`, settings);
+      const fetchResponse = await fetch(`${process.env.BASE_URL}/register`, settings);
       const data = await fetchResponse.json();
       console.log(data);
       router.push('/login')
