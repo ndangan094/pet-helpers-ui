@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import LoginPageTemplate from "../../_template/login-page";
 
 const Login = () => {
     return (
@@ -7,6 +7,7 @@ const Login = () => {
             <Head>
                 <title>Login</title>
             </Head>
+            <LoginPageTemplate/>
         </>
     )
 }

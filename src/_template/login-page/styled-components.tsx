@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { DEFAULT_DEVICE } from "../../constants";
 
-const HomePageComponent = styled.div`
-  height: 100%;
+const Container =styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top : 60px;
-  padding-bottom: 50px;
+  padding: 60px 0 50px 0;
 `;
 
-export {HomePageComponent};
+export {Container};

@@ -1,6 +1,5 @@
-
 import Head from "next/head";
-
+import SignUpPageTemplate from "../../_template/signup-page";
 
 const SignUp = () => {
     return (
@@ -8,6 +7,7 @@ const SignUp = () => {
             <Head>
                 <title>Sign Up</title>
             </Head>
+            <SignUpPageTemplate/>
         </>
     )
 }

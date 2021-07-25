@@ -9,7 +9,9 @@ const FooterContainer = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-
+  position:fixed;
+  bottom:0;
+  width: 100%;
 `;
 
 
