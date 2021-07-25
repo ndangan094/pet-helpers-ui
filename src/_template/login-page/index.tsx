@@ -7,7 +7,6 @@ import globalStyles from "./style.js";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
-import  baseUrl from "../../../public/axios";
 
 const LoginPageTemplate = () => {
   const [username, setUsername] = useState('');
@@ -35,7 +34,7 @@ const LoginPageTemplate = () => {
       })
     };
     try {
-      const fetchResponse = await fetch(`${process.env.BASE_URL}/login`, settings);
+      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, settings);
       const data = await fetchResponse.json();
       console.log(data);
       alert('login success')

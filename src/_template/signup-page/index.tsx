@@ -7,7 +7,6 @@ import globalStyles from "./style.js";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import baseUrl from "../../../public/axios";
 
 
 const SignUpPageTemplate = () => {
@@ -43,7 +42,7 @@ const SignUpPageTemplate = () => {
       })
     };
     try {
-      const fetchResponse = await fetch(`${process.env.BASE_URL}/register`, settings);
+      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, settings);
       const data = await fetchResponse.json();
       console.log(data);
       router.push('/login')
