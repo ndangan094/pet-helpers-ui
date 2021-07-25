@@ -4,24 +4,54 @@ import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
 import { Container } from "./styled-components";
 import globalStyles from "./style.js";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import { useState } from "react";
-
+import { useEffect } from "react";
+import baseUrl from "../../../public/axios";
 
 const LoginPageTemplate = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoginClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
+  useEffect(() => {
+    if (isLoginClicked) {
+      getUser(username, password)
+      setIsClicked(false)
+    }
+  }, [isLoginClicked])
 
+  const getUser = async (username, password) => {
+    const settings = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        'username': username,
+        'password': password
+      })
+    };
+    try {
+      const fetchResponse = await fetch(`${baseUrl}/login`, settings);
+      const data = await fetchResponse.json();
+      console.log(data);
+      alert('login success')
+    } catch (e) {
+      return e;
+    }
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(username, password)
-    console.log("login");
+    setIsClicked(true);
   };
   const toSignUp = () => {
     router.push('/signup')
   }
+
+
 
   return (
     <>
@@ -63,7 +93,7 @@ const LoginPageTemplate = () => {
           </div>
         </div>
       </div>
-    <style jsx>{globalStyles}</style>
+      <style jsx>{globalStyles}</style>
       <Footer />
     </>
   );

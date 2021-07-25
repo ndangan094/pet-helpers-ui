@@ -4,8 +4,11 @@
 import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
 import globalStyles from "./style.js";
-import {router} from 'next/client'
 import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import baseUrl from "../../../public/axios";
+
 
 const SignUpPageTemplate = () => {
   const [email, setEmail] = useState('');
@@ -13,9 +16,46 @@ const SignUpPageTemplate = () => {
   const [password, setPassword] = useState('');
   const [repass, setRepassword] = useState('');
 
+  const [isSignUpClicked, setIsClicked] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isSignUpClicked) {
+      regUser(email, username, password)
+      setIsClicked(false)
+    }
+  }, [isSignUpClicked])
+
+  const regUser = async (email, username, password) => {
+    const settings = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "username": username,
+        "password": password,
+        "first_name": "",
+        "last_name": "",
+        "email": email,
+        "phone_number": ""
+      })
+    };
+    try {
+      const fetchResponse = await fetch(`${baseUrl}/register`, settings);
+      const data = await fetchResponse.json();
+      console.log(data);
+      router.push('/login')
+    } catch (e) {
+      return e;
+    }
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email,username,password,repass)
+    if(password === repass)
+      setIsClicked(true)
+    else alert('Mật khẩu nhập lại phải giống mật khẩu trước')
   };
   const toLogin = () => {
     router.push('/login')
@@ -23,7 +63,7 @@ const SignUpPageTemplate = () => {
   return (
     <>
       <Header />
-    
+
       <div className="wrapper fadeInDown">
         <div id="formContent">
           <h2 onClick={toLogin} className="inactive underlineHover"> Sign In </h2>
@@ -84,7 +124,7 @@ const SignUpPageTemplate = () => {
           </div>
         </div>
       </div>
-    <style jsx>{globalStyles}</style>
+      <style jsx>{globalStyles}</style>
       <Footer />
     </>
   );
