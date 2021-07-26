@@ -7,6 +7,7 @@ import globalStyles from "./style.js";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
+import {User} from "../../models/user";
 
 const LoginPageTemplate = () => {
   const [username, setUsername] = useState('');
@@ -20,6 +21,38 @@ const LoginPageTemplate = () => {
       setIsClicked(false)
     }
   }, [isLoginClicked])
+
+
+  const getUserInfo = async (auth) => {
+    const response = {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        "Authorization":`Bearer ${auth}`
+      }
+    };
+    try {
+      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/info`, response);
+      if(fetchResponse.status==200){
+        const data = await fetchResponse.json();
+        console.log(data);
+        const userInfo: User = {
+          email:data.email,
+          first_name:data.first_name,
+          id:data.id,
+          last_name:data.last_name,
+          phone_number:data.phone_number,
+          username:data.username,
+          access_token:auth
+        }
+
+        localStorage.setItem("userInfo",JSON.stringify(userInfo));
+      }
+    } catch (e) {
+      return e;
+    }
+  }
 
   const getUser = async (username, password) => {
     const settings = {
@@ -35,9 +68,16 @@ const LoginPageTemplate = () => {
     };
     try {
       const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, settings);
-      const data = await fetchResponse.json();
-      console.log(data);
-      alert('login success')
+      if(fetchResponse.status==200){
+        const data = await fetchResponse.json();
+        console.log(data);
+        await getUserInfo(data.access_token);
+        alert('login success');
+        await router.push('/');
+
+
+
+      }
     } catch (e) {
       return e;
     }

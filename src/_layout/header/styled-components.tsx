@@ -18,7 +18,9 @@ const Logo = styled.div`
   flex-direction: row;
   align-items: center;
   position: fixed;
-
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const Text = styled.div`
@@ -27,10 +29,10 @@ const Text = styled.div`
 
 const Category = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   position: fixed;
-  left: 42%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
 `;
 
 const CategoryButton = styled.div`
@@ -48,6 +50,8 @@ const Action = styled.div`
   flex-direction: row;
   right: 0;
   margin-right: 20px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ActionButton = styled.div`
@@ -62,9 +66,14 @@ const ActionButton = styled.div`
   }
 `
 
+const Welcome = styled.div`
+  font-size: 16px;
+  margin-right: 20px;
+`;
 
 
-export {
+
+export {Welcome,
     HeaderComponent,
     Logo,
     Category,
