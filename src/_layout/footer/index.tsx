@@ -6,7 +6,7 @@ import {FooterContainer} from './styled-components';
 const Footer: React.FC = (props) => {
     return <>
         <FooterContainer>
-            ©-2021 || Pet Finder
+            © Nhom 9 2021. All rights reserved.
         </FooterContainer>
     </>
 }
