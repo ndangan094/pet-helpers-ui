@@ -1,4 +1,4 @@
-@import './variable';
+@import "./variable";
 
 html,
 body {
@@ -15,4 +15,127 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.carousel {
+  width: 100%;
+  height: 600px;
+  div {
+    width: 100%;
+    height: 100%;
+    .header {
+      position: absolute;
+      transform: translate(100px, 100px);
+      z-index: 1;
+      h1 {
+        color: #fff !important;
+        text-transform: uppercase;
+      }
+      p {
+        color: #fff !important;
+        font-size: large;
+      }
+      button {
+        margin-left: 50px;
+        width: 193px;
+        height: 44px;
+        border-radius: 20px;
+        background-color: #d61c62;
+        color: #fff;
+      }
+      button:hover {
+        background-color: #018ae0;
+      }
+    }
+  }
+  img {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+  }
+}
+
+.about-us {
+  margin: 30px 300px;
+  div {
+    padding-right: 50px;
+    h1 {
+      font-weight: 500;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.services {
+  height: 450px;
+  margin: 30px 300px;
+  margin-top: 150px;
+  .service {
+    padding: 0 10px 30px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    height: 350px;
+    background-color: #fc0 !important;
+    background-image: url(https://hanoipetadoption.com/Images/patterns/pattern3.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    div.content {
+      text-align: center;
+      padding: 15px 20px 30px;
+      margin-top: -80px;
+      border-radius: 25px;
+      background-color: #f6f6f6!important;
+      transition: 0.3s;
+      h3 {
+        text-transform: uppercase;
+        color: #222;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+      p {
+        height: 50px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      img {
+        height: 160px;
+        border: 10px solid #fff;
+        border-radius: 50%;
+        margin-bottom: 40px;
+        transition: 0.3s;
+      }
+    }
+    .content:hover {
+      box-shadow: 0 0 25px rgba(15, 1, 1, 0.6);
+      img {
+        transform: scale(1.1) rotate(10deg);
+      }
+    }
+    .text-center {
+      text-align: center;
+      margin-top: 20px;
+      button {
+        width: 60%;
+        height: 40px;
+        background-color: #d61c62;
+        color: #fff;
+        border-radius: 25px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    // button {
+    //   width: 50%;
+    //   margin: auto;
+    // }
+  }
 }

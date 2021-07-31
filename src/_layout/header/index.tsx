@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     useEffect(() => {
         setUser(JSON.parse(localStorage.getItem('userInfo')))
     }, [])
-    console.log(user);
+    // console.log(user);
 
     const logout = () => {
         localStorage.removeItem('userInfo');
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                                 </ActionButton>
                             </>
                         ) : (<>
-                            <Welcome>{"Welcome, " + user.first_name + " " + user.last_name}</Welcome>
+                            <Welcome>{"Welcome, " + user.username + " " + user.first_name + " " + user.last_name}</Welcome>
                             <ActionButton onClick={() =>router.push("/user")}>
                                 Info
                             </ActionButton>
