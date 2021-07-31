@@ -3,8 +3,15 @@ import Head from "next/head";
 import type { AppProps } from 'next/app'
 import 'antd/dist/antd.css';
 import "../styles/globals.scss";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Head>
