@@ -184,11 +184,11 @@ const HomePageTemplate = () => {
         <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine">
         <Row justify="space-around" className="services">
           
-            <Col span={7} className="service">
+            <Col span={8} className="service">
               <div className="content">
                 <img src="https://hanoipetadoption.com/admin/user-content/03fc601a-a150-4d55-b051-15d6d3ced88e.jpg" />
                 <h3>ủng hộ</h3>
-                <p>
+                <p data-aos="flip-right" data-aos-duration="500" data-aos-easing="ease-in-sine">
                   Giúp duy trì hoạt động của HPA qua hình thức quyên góp tiền
                   hoặc nhu yếu phẩm.
                 </p>
@@ -197,11 +197,11 @@ const HomePageTemplate = () => {
                 <Button onClick={handleDonateClick}>tìm hiểu thêm</Button>
               </div>
             </Col>
-            <Col span={7} className="service">
+            <Col span={8} className="service">
               <div className="content">
                 <img src="https://hanoipetadoption.com/admin/user-content/28516d17-6278-4bd4-8eb7-0f3400d07969.jpg" />
                 <h3>tình nguyện</h3>
-                <p>
+                <p data-aos="flip-right" data-aos-duration="500" data-aos-easing="ease-in-sine">
                   Hành động để thay đổi cuộc sống của chó, mèo và thú cưng khác.
                 </p>
               </div>
@@ -209,11 +209,11 @@ const HomePageTemplate = () => {
                 <Button onClick={handleVolunteerClick}>tìm hiểu thêm</Button>
               </div>
             </Col>
-            <Col span={7} className="service">
+            <Col span={8} className="service">
               <div className="content">
                 <img src="https://hanoipetadoption.com/admin/user-content/423cf220-b557-4644-a769-dd508226180d.jpg" />
                 <h3>nhận nuôi</h3>
-                <p>
+                <p data-aos="flip-right" data-aos-duration="500" data-aos-easing="ease-in-sine">-
                   Hãy nhận nuôi, cưu mang, đừng xua đuổi và yêu thương loài động
                   vật bị bỏ rơi.
                 </p>
