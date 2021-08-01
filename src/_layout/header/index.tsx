@@ -38,9 +38,15 @@ const Header: React.FC = () => {
         <>
             <HeaderComponent>
                 <Category>
-                    <CategoryButton>Dog</CategoryButton>
-                    <CategoryButton>Cat</CategoryButton>
-                    <CategoryButton>Bread</CategoryButton>
+                    <CategoryButton onClick={() => {
+                        router.push('/adobt')
+                    }}>Nhận nuôi</CategoryButton>
+                    <CategoryButton onClick={() => {
+                        router.push('/donate')
+                    }}>Ủng hộ</CategoryButton>
+                    <CategoryButton onClick={() => {
+                        router.push('/volunteer')
+                    }}>Tình nguyện viên</CategoryButton>
                 </Category>
                 <Logo onClick={()=>{
                     if (router.pathname === "/")
