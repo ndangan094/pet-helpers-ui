@@ -36,7 +36,7 @@ const UserInfoPage = () => {
             })
         };
         try {
-            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/info`, response);
+            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/me`, response);
             if (fetchResponse.status == 200) {
                 localStorage.setItem("userInfo",JSON.stringify(userFromServer));
                 alert("Change successfully!!")
@@ -57,7 +57,7 @@ const UserInfoPage = () => {
             }
         };
         try {
-            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/info`, response);
+            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/me`, response);
             if (fetchResponse.status == 200) {
                 const data = await fetchResponse.json();
                 console.log("---->", data);
@@ -68,6 +68,7 @@ const UserInfoPage = () => {
                     last_name: data.last_name,
                     phone_number: data.phone_number,
                     username: data.username,
+                    role:data.role,
                     access_token: auth
                 }
                 setUserFromServer(userInfo);

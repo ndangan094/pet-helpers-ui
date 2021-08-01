@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                     <CategoryButton>Cat</CategoryButton>
                     <CategoryButton>Bread</CategoryButton>
                 </Category>
-                <Logo onClick={()=>{
+                <Logo onClick={() => {
                     if (router.pathname === "/")
                         window.location.reload();
                     else
@@ -63,7 +63,8 @@ const Header: React.FC = () => {
                             </>
                         ) : (<>
                             <Welcome>{"Welcome, " + user.username + " " + user.first_name + " " + user.last_name}</Welcome>
-                            <ActionButton onClick={() =>router.push("/user")}>
+                            {user.role === "admin" ? <ActionButton onClick={() => router.push("/dashboard")} >Dashboard</ActionButton> : null}
+                            <ActionButton onClick={() => router.push("/user")}>
                                 Info
                             </ActionButton>
                             <ActionButton onClick={() => logout()}>
@@ -75,6 +76,7 @@ const Header: React.FC = () => {
             </HeaderComponent>
         </>
     );
-};
+}
+;
 
 export default Header;

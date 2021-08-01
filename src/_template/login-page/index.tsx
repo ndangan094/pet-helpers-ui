@@ -33,7 +33,7 @@ const LoginPageTemplate = () => {
       }
     };
     try {
-      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/user/info`, response);
+      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/me`, response);
       if(fetchResponse.status==200){
         const data = await fetchResponse.json();
         console.log(data);
@@ -44,7 +44,8 @@ const LoginPageTemplate = () => {
           last_name:data.last_name,
           phone_number:data.phone_number,
           username:data.username,
-          access_token:auth
+          access_token:auth,
+          role:data.role
         }
 
         localStorage.setItem("userInfo",JSON.stringify(userInfo));

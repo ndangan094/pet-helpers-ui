@@ -31,7 +31,7 @@ const RowLine = styled.div`
 `;
 
 const Left = styled.div`
-  min-width: 130px;
+  min-width: 150px;
   text-align: right;
   padding-right: 10px;
   font-size: 16px;

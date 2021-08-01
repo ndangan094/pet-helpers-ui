@@ -8,6 +8,7 @@ export interface User {
     phone_number?: string;
     username?: string;
     access_token?:string;
+    role?:string;
 }
 
 // export {User}
