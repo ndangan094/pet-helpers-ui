@@ -91,7 +91,7 @@ a {
       padding: 15px 20px 30px;
       margin-top: -80px;
       border-radius: 25px;
-      background-color: #f6f6f6!important;
+      background-color: #f6f6f6 !important;
       transition: 0.3s;
       h3 {
         text-transform: uppercase;
@@ -137,5 +137,122 @@ a {
     //   width: 50%;
     //   margin: auto;
     // }
+  }
+}
+
+.adobt-page-header {
+  background-size: 101.388%;
+  background: url("https://hanoipetadoption.com/Images/jumbotron/jumbotron-adopt.jpg");
+
+  background-position: center center;
+  height: 212px;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    height: 212px;
+  }
+
+  .adobt-heading-container {
+    margin: 30px 450px;
+    color: #fff;
+    z-index: 1;
+    h1 {
+      color: #fff;
+      font-size: 2.8125rem;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+    }
+    div {
+      width: 80%;
+      background-color: #d61c62;
+      padding: 7px;
+      border-radius: 5px;
+      text-align: center;
+      .breadcrumb-item {
+        transition: color 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          color: #018ae0;
+        }
+      }
+      .breadcrumb-active {
+        color: #cecece;
+      }
+    }
+  }
+}
+
+.adobt-page-content {
+  padding-top: 40px;
+  .process {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.125rem;
+      color: #222;
+      font-weight: 600;
+      line-height: 1.1;
+      text-transform: capitalize !important;
+    }
+    hr {
+      margin-left: 0 !important;
+      content: " ";
+      display: block;
+      width: 60px;
+      margin: 10px auto;
+      border: 1px solid #cecece;
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+    p {
+      text-align: justify !important;
+      margin-top: 1.5rem !important;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #6f6f6f;
+    }
+  }
+  .condition {
+    background-color: #f6f6f6 !important;
+    display: block;
+    border: 0;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    h5 {
+      text-transform: capitalize;
+      color: #222;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.3125rem;
+      font-weight: 600;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+      font-weight: 700 !important;
+      padding-left: 0 !important;
+      display: block;
+      li {
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 26px;
+        padding: 5px 0;
+        font-size: 16px;
+        line-height: 26px;
+        color: #6f6f6f;
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
   }
 }
