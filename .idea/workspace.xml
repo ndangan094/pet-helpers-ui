@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c416a2e7-3ebb-4f02-b5aa-9622c8230fcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/dashboard-page/styled-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/pet.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_layout/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_layout/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/login-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/login-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/adobt-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/adobt-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/adobt-page/styled-conponents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/adobt-page/styled-conponents.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +60,8 @@
       <workItem from="1627308477173" duration="11265000" />
       <workItem from="1627544195430" duration="63000" />
       <workItem from="1627736826593" duration="593000" />
-      <workItem from="1627820649060" duration="11355000" />
+      <workItem from="1627820649060" duration="12247000" />
+      <workItem from="1627879958956" duration="8863000" />
     </task>
     <servers />
   </component>

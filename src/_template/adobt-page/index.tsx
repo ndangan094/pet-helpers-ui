@@ -4,9 +4,12 @@ import { Row, Col, Carousel, Button } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import { useRouter } from "next/router";
-import { AdobtPageComponent } from "./styled-conponents";
+import { AdobtPageComponent ,FindPetComponent,PetCategory,PetTag,ListPet,PetBox} from "./styled-conponents";
 import Icon from '@ant-design/icons';
 import CatPng from '../../../public/pawprint.png'
+import { useState } from "react";
+import { useEffect } from "react";
+import { Pet } from "../../models/pet";
 
 
 const AdobtPageTemplate = () => {
@@ -22,6 +25,57 @@ const AdobtPageTemplate = () => {
   const handleAdobtClick = () => {
     router.push("/adobt");
   };
+
+  const [petCategory,setPetCategory] = useState("");
+  const [pet,setPet] = useState<Pet[]>();
+
+  const chooseCategory = (category) => {
+    setPetCategory(category);
+  }
+
+  useEffect(() => {
+    getPet();
+  }, [petCategory])
+
+
+  const getPet = async () => {
+    const response = {
+      method: 'GET',
+    };
+    try {
+      const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pets` + (petCategory === ""?"":`?species=${petCategory}`), response);
+      if(fetchResponse.status==200){
+        const data = await fetchResponse.json();
+        console.log(data.pets);
+        const _item: Pet[] = data.pets.map((item)=>{
+          return({
+            name: item.name,
+            age: item.age,
+            color: item.color,
+            health_condition: item.health_condition,
+            weight: item.weight,
+            description: item.description,
+            species: item.species,
+            image: item.images
+          })
+        })
+        console.log("item---->",_item)
+        setPet(_item);
+        console.log("pet----->",pet)
+      }
+    } catch (e) {
+      return e;
+    }
+  }
+
+  const Tag = ({tag,value,isHide}) => {
+    return <>
+        <div style={{display:"flex",flexDirection:"row", borderBottom:`${!isHide?"1":"0"}px dashed #cecece`,margin:"5px 0 5px 0"}}>
+          <div style={{marginRight:"5px",fontWeight:"bold"}}>{tag}</div>
+          <div>{value}</div>
+        </div>
+    </>
+  }
 
   return (
     <>
@@ -44,7 +98,7 @@ const AdobtPageTemplate = () => {
             </div>
           </div>
         </Row>
-        <Row className="adobt-page-content" data-aos="zoom-in" data-aos-duration="1500" >
+        <Row style={{backgroundColor:"white"}} className="adobt-page-content" data-aos="zoom-in" data-aos-duration="1500" >
           <Col span={5}></Col>
           <Col span={14}>
             <Row>
@@ -109,6 +163,30 @@ const AdobtPageTemplate = () => {
                 </div>
               </Col>
             </Row>
+          <FindPetComponent>
+            <div style={{fontSize:"30px",fontWeight:"bold",textAlign:'center'}}>TÌM THÚ CƯNG</div>
+            <PetCategory>
+              <PetTag onClick={()=>{chooseCategory("")}} isPick={petCategory === ""}>Tất cả</PetTag>
+              <PetTag onClick={()=>{chooseCategory("dog")}} isPick={petCategory === "dog"}>Chó</PetTag>
+              <PetTag onClick={()=>{chooseCategory("cat")}} isPick={petCategory === "cat"}>Mèo</PetTag>
+            </PetCategory>
+          </FindPetComponent>
+            <ListPet>
+              {pet?.map((item)=>{
+                return <>
+                <PetBox>
+                  <img style={{width:"100%",height:"219px",objectFit:"cover"}} src={item?.image[0]?.url?item?.image[0]?.url:"https://i.vimeocdn.com/portrait/1274237_300x300.jpg"} />
+                  <div style={{fontSize: "1.3125rem",
+                    fontWeight: "bold"}}>{item.name}</div>
+                  <div style={{width:"50px",height:"2px",backgroundColor:"#cecece"}}>
+                  </div>
+                  <Tag tag={"Giới tính:"} value={"Chưa rõ"}/>
+                  <Tag tag={"Tuổi:"} value={item.age}/>
+                  <Tag isHide={true} tag={"Sức khoẻ:"} value={item.health_condition}/>
+                </PetBox>
+                </>
+              })}
+            </ListPet>
           </Col>
           <Col span={5}></Col>
         </Row>
