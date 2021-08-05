@@ -1,11 +1,13 @@
 import {useRouter} from 'next/router';
 import React, {useEffect, useState} from 'react';
+import { getGender } from '../../hooks/ultis.hook';
 import {Pet} from '../../models/pet';
 import {User} from '../../models/user';
 import Footer from '../../_layout/footer';
 import Header from '../../_layout/header';
 import { RowLine, SubmitButton} from '../user-information-page/styled-components';
-import {ActionButton, ActionContainer, ActionRow, DashBoardContainer, Left,Right} from "./styled-components";
+import {ActionButton, ActionContainer, ActionRow, BoxPet, DashBoardContainer, Left,ListPetContainer,PetList,Right} from "./styled-components";
+import { Modal } from 'antd';
 
 const PetTemplate = () => {
 
@@ -15,12 +17,34 @@ const PetTemplate = () => {
     const [isLoading, setLoading] = useState(false);
     const [a, seta] = useState(true);
     const [error, setError] = useState("");
+    const [mode,setMode] = useState("listpet")
     let formData;
 
 
     useEffect(() => {
         setUser(JSON.parse(localStorage.getItem('userInfo')))
     }, [])
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+
+    const ModalConfirm = () => {
+        return <Modal title="Xoá thú cưng" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            Bạn có muốn xoá thú cưng này?
+        </Modal>
+    }
 
 
     const check = () => {
@@ -88,6 +112,43 @@ const PetTemplate = () => {
 
     }
 
+    const [listPet,setListPet] = useState<Pet[]>();
+
+
+    const getPet = async () => {
+        const response = {
+            method: 'GET',
+        };
+        try {
+            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pets`, response);
+            if(fetchResponse.status==200){
+                const data = await fetchResponse.json();
+                console.log(data.pets);
+                const _item: Pet[] = data.pets.map((item)=>{
+                    return({
+                        name: item.name,
+                        age: item.age,
+                        color: item.color,
+                        health_condition: item.health_condition,
+                        weight: item.weight,
+                        description: item.description,
+                        species: item.species,
+                        image: item.images
+                    })
+                })
+                console.log("item---->",_item)
+                setListPet(_item);
+                console.log("pet----->",pet)
+            }
+        } catch (e) {
+            return e;
+        }
+    }
+
+    useEffect(()=>{
+        getPet();
+    },[])
+
     const addImages = async (id) => {
         const response = {
             method: 'POST',
@@ -111,18 +172,10 @@ const PetTemplate = () => {
         }
     }
 
-    return <>
-        <Header/>
-        <DashBoardContainer>
-            <ActionRow>
-                <ActionButton>
-                    Thêm pet
-                </ActionButton>
-                <ActionButton>
-                    Tình nguyện viên
-                </ActionButton>
-            </ActionRow>
 
+
+    const AddPet = () =>{
+        return <>
             <ActionContainer>
                 <div>Thêm pet</div>
                 <div style={{height: "30px"}}/>
@@ -138,7 +191,7 @@ const PetTemplate = () => {
                 <Left>
                     Tuổi:
                 </Left>
-                <div style={{display: 'flex', flexDirection: "row",width:"60%"}}>
+                <div style={{display: 'flex', flexDirection: "row",width:"55%"}}>
                     <div style={{display: "flex", flexDirection: "row", paddingRight: "20px"}}>
                         {pet.age == "young" ? <img onClick={() => {
                                 pet.age = "young";
@@ -326,7 +379,43 @@ const PetTemplate = () => {
                         Submit
                     </SubmitButton>
                 }
-            </ActionContainer>
+            </ActionContainer></>
+    }
+
+    const ListPet = () =>{
+        return <>
+            <ListPetContainer>
+                <PetList>
+                    {listPet?.map((pet)=>{
+                        return <>
+                            <BoxPet>
+                                <div style={{display:"flex",flexDirection:"row",height:"100%",alignItems:'center'}}>
+                                    <img style={{marginLeft:"5px",height:"120px",width:"120px",objectFit:"cover",borderRadius:"5px"}} src={pet?.image[0]?.url?pet.image[0].url:"https://i.vimeocdn.com/portrait/1274237_300x300.jpg"}/>
+                                    <div style={{marginLeft:"10px",display:"flex",flexDirection:"column",justifyContent:'space-evenly',height:"100%"}}>
+                                        <div style={{fontSize:"18px",fontWeight:"bold"}}>{pet?.name}</div>
+                                        <div style={{fontSize:"16px"}}>Giới tính: {getGender(pet?.age)}</div>
+                                        <div style={{fontSize:"16px"}}>Sức khoẻ: {pet?.health_condition}</div>
+                                    </div>
+                                </div>
+                                <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
+                                    <ActionButton>Chi tiết</ActionButton>
+                                    <ActionButton onClick={()=>{showModal()}} color={"#FF4848"}>Xoá</ActionButton>
+                                    <ModalConfirm/>
+                                </div>
+                            </BoxPet>
+                        </>
+                    })}
+                </PetList>
+            </ListPetContainer>
+        </>
+    }
+
+    return <>
+        <Header/>
+        <DashBoardContainer>
+            {
+                mode==="listpet"?<ListPet/>:<AddPet/>
+            }
         </DashBoardContainer>
         <Footer/>
     </>

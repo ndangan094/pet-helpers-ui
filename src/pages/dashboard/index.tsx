@@ -1,5 +1,5 @@
 import Head from "next/head";
-import DashboardTemplate  from  '../../_template/dashboard-page/index'
+import DashboardTemplate from "../../_template/dashboard-page"
 
 const DashBoard = () => {
     return (

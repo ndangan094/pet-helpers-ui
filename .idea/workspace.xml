@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c416a2e7-3ebb-4f02-b5aa-9622c8230fcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/choose.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/unchoose.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/pet/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_layout/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_layout/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/styled-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/pet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/pet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,7 @@
       <workItem from="1627879958956" duration="9032000" />
       <workItem from="1627954510483" duration="633000" />
       <workItem from="1628082394689" duration="6187000" />
-      <workItem from="1628176533707" duration="3565000" />
+      <workItem from="1628176533707" duration="10462000" />
     </task>
     <servers />
   </component>
