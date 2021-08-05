@@ -54,7 +54,7 @@ const Header: React.FC = () => {
                     else
                         router.push("/");
                 }}>
-                    <img alt="logo" src={"images/logo.png"} width={100}/>
+                    <img alt="logo" src={"/images/logo.png"} width={100}/>
                     <Text>PET SECURE</Text>
                 </Logo>
 
