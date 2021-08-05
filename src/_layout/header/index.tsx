@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                                 </ActionButton>
                             </>
                         ) : (<>
-                            <Welcome>{"Welcome, " + user.username + " " + user.first_name + " " + user.last_name}</Welcome>
+                            <Welcome>{"Welcome, " + ((!user.first_name)?user.username : (user.first_name + " " + user.last_name))}</Welcome>
                             {user.role === "admin" ? <ActionButton onClick={() => router.push("/dashboard")} >Dashboard</ActionButton> : null}
                             <ActionButton onClick={() => router.push("/user")}>
                                 Info

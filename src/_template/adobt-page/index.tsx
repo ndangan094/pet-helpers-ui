@@ -180,8 +180,8 @@ const AdobtPageTemplate = () => {
                     fontWeight: "bold"}}>{item.name}</div>
                   <div style={{width:"50px",height:"2px",backgroundColor:"#cecece"}}>
                   </div>
-                  <Tag tag={"Giới tính:"} value={"Chưa rõ"}/>
-                  <Tag tag={"Tuổi:"} value={item.age}/>
+                  <Tag isHide={false} tag={"Giới tính:"} value={"Chưa rõ"}/>
+                  <Tag isHide={false} tag={"Tuổi:"} value={item.age}/>
                   <Tag isHide={true} tag={"Sức khoẻ:"} value={item.health_condition}/>
                 </PetBox>
                 </>
