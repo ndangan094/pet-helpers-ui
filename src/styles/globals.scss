@@ -2,7 +2,7 @@
 
 html,
 body {
-  background-color: #f6f6f6;
+  // background-color: #f6f6f6;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -424,4 +424,9 @@ a {
       background-color: #ffc107;
     }
   }
+}
+
+.select-status {
+  width: 200px;
+  text-align: left;
 }

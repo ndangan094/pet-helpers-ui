@@ -17,7 +17,7 @@ const VolunteerPageTemplate = () => {
   return (
     <>
       <Header />
-      <VolunteerPageComponent className="home-page-container">
+      <VolunteerPageComponent style={{backgroundColor: '#f6f6f6'}} className="home-page-container">
         <Row className="volunteer-page-header">
           <div
             data-aos="fade-up"

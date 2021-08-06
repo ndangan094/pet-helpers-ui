@@ -83,6 +83,10 @@ const DashboardTemplate = () => {
         }
     }
 
+    const handleVolunteer = () => {
+        router.push('/manage-volunteer');
+    }
+
     return <>
         <Header/>
         <DashBoardContainer>
@@ -90,7 +94,7 @@ const DashboardTemplate = () => {
                 <ActionButton>
                     Thêm pet
                 </ActionButton>
-                <ActionButton>
+                <ActionButton onClick={handleVolunteer}>
                     Tình nguyện viên
                 </ActionButton>
             </ActionRow>
