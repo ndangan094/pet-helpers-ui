@@ -28,6 +28,7 @@ const RowLine = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 10px 0 10px 0px;
+  width: 100%;
 `;
 
 const Left = styled.div`
@@ -35,19 +36,31 @@ const Left = styled.div`
   text-align: right;
   padding-right: 10px;
   font-size: 16px;
+  width: 40%;
 `;
 
 const Right = styled.input`
+  width: 30%;
+
   height: 40px;
   border: 1px solid black;
   border-radius: 15px;
   font-size: 18px;
   font-weight: 600;
   padding-left: 10px;
+  ::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
   &:focus {
     outline: none;
   }
 `;
+
 
 const Text = styled.div`
   font-size: 22px;

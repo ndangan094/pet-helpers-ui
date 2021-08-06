@@ -1,5 +1,14 @@
 import React from "react";
 
+export const getGender = (gender) =>{
+  if(gender==="young")
+    return "Còn nhỏ";
+  else if(gender==="mature")
+    return "Trưởng thành";
+  else
+    return "Già"
+}
+
 export const useOnClickOutside = (ref, handler) => {
   React.useEffect(() => {
     const listener = (event) => {

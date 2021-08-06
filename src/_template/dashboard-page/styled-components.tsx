@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 
 const DashBoardContainer = styled.div`
-  background-color: whitesmoke;
+  background-color: white;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 
@@ -35,7 +35,6 @@ const ActionButton = styled.div`
 
 const ActionContainer = styled.div`
   width: 50%;
-  height: 70%;
   background-color: white;
   min-width: 800px;
   display: flex;
@@ -44,8 +43,21 @@ const ActionContainer = styled.div`
   align-items: center;
 `;
 
-const ImagePreview = styled.div`
-  //margin-left: 20px;
+const PetTag = styled.button`
+  font-size: 1.3125rem;
+  color: white;
+  height: 55px;
+  width: 150px;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 40px;
+  background-color: #fc0;
+  margin: 0 10px 0 10px;
+  &:hover{
+    background-color: #018ae0;
+    cursor: pointer;
+  }
 `;
 
-export {DashBoardContainer, ActionRow, ActionButton, ActionContainer,ImagePreview}
+
+export {DashBoardContainer, ActionRow, ActionButton, ActionContainer,PetTag}

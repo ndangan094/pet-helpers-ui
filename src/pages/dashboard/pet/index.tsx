@@ -1,13 +1,13 @@
 import Head from "next/head";
-import DashboardTemplate from "../../_template/dashboard-page"
+import PetTemplate  from  '../../../_template/pet-page/index'
 
 const DashBoard = () => {
     return (
         <>
             <Head>
-                <title>DashBoard</title>
+                <title>Pet Manager</title>
             </Head>
-            <DashboardTemplate/>
+            <PetTemplate/>
         </>
     )
 }

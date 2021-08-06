@@ -15,7 +15,7 @@
     "@ant-design/icons": "^4.6.2",
     "@babel/core": "^7.13.16",
     "@types/styled-components": "^5.1.9",
-    "antd": "^4.16.9",
+    "antd": "^4.16.10",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
