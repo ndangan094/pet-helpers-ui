@@ -47,12 +47,13 @@ const PetTag = styled.button`
   font-size: 1.3125rem;
   color: white;
   height: 55px;
-  width: 150px;
+  width: 300px;
   font-weight: bold;
   border: 2px solid;
   border-radius: 40px;
   background-color: #fc0;
   margin: 0 10px 0 10px;
+  transition: 0.3s;
   &:hover{
     background-color: #018ae0;
     cursor: pointer;

@@ -29,9 +29,8 @@ const DashboardTemplate = () => {
         <Header/>
             <DashBoardContainer>
                 <PetTag onClick={()=>{router.push("/dashboard/pet")}}>Quản lý pet</PetTag>
-                <ActionButton onClick={handleVolunteer}>
-                    Tình nguyện viên
-                </ActionButton>
+             
+                <PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>
             </DashBoardContainer>
         <Footer/>
     </>
