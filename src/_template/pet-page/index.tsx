@@ -7,7 +7,7 @@ import Footer from '../../_layout/footer';
 import Header from '../../_layout/header';
 import { RowLine, SubmitButton} from '../user-information-page/styled-components';
 import {ActionButton, ActionContainer, ActionRow, BoxPet, DashBoardContainer, Left,ListPetContainer,PetList,Right} from "./styled-components";
-import { Modal } from 'antd';
+import {Input, Modal } from 'antd';
 
 const PetTemplate = () => {
 
@@ -17,7 +17,8 @@ const PetTemplate = () => {
     const [isLoading, setLoading] = useState(false);
     const [a, seta] = useState(true);
     const [error, setError] = useState("");
-    const [mode,setMode] = useState("listpet")
+    const [mode,setMode] = useState("listpet");
+    const [idPet,setIdPet] = useState(undefined);
     let formData;
 
 
@@ -31,7 +32,8 @@ const PetTemplate = () => {
         setIsModalVisible(true);
     };
 
-    const handleOk = () => {
+    const handleOk = async () => {
+        await deletePet();
         setIsModalVisible(false);
     };
 
@@ -41,8 +43,8 @@ const PetTemplate = () => {
 
 
     const ModalConfirm = () => {
-        return <Modal title="Xoá thú cưng" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-            Bạn có muốn xoá thú cưng này?
+        return <Modal title="Xoá thú cưng" visible={isModalVisible} onOk={()=>{handleOk()}} onCancel={handleCancel}>
+            {"Bạn có muốn xoá thú cưng này?"}
         </Modal>
     }
 
@@ -114,6 +116,26 @@ const PetTemplate = () => {
 
     const [listPet,setListPet] = useState<Pet[]>();
 
+    const deletePet = async () =>{
+
+        const response = {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${user.access_token}`
+            },
+        };
+        try {
+            const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pets/${idPet}`, response);
+            if(fetchResponse.status==200){
+                location.reload();
+            }else{
+                alert("Đã có lỗi xảy ra");
+            }
+        }catch (e) {
+            alert("Đã có lỗi xảy ra");
+        }
+    }
+
 
     const getPet = async () => {
         const response = {
@@ -126,6 +148,7 @@ const PetTemplate = () => {
                 console.log(data.pets);
                 const _item: Pet[] = data.pets.map((item)=>{
                     return({
+                        id:item.id,
                         name: item.name,
                         age: item.age,
                         color: item.color,
@@ -174,219 +197,18 @@ const PetTemplate = () => {
 
 
 
-    const AddPet = () =>{
-        return <>
-            <ActionContainer>
-                <div>Thêm pet</div>
-                <div style={{height: "30px"}}/>
-                <RowLine>
-                    <Left>
-                        Tên:
-                    </Left>
-                    <Right onChange={(e) => {
-                        pet.name = e.target.value;
-                        setPet(pet);
-                    }}/>
-                </RowLine><RowLine>
-                <Left>
-                    Tuổi:
-                </Left>
-                <div style={{display: 'flex', flexDirection: "row",width:"55%"}}>
-                    <div style={{display: "flex", flexDirection: "row", paddingRight: "20px"}}>
-                        {pet.age == "young" ? <img onClick={() => {
-                                pet.age = "young";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                            <img onClick={() => {
-                                pet.age = "young";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                        <div>Còn nhỏ</div>
-                    </div>
-                    <div style={{display: "flex", flexDirection: "row", paddingRight: "20px"}}>
-                        {pet.age == "mature" ? <img onClick={() => {
-                                pet.age = "mature";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                            <img onClick={() => {
-                                pet.age = "mature";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                        <div>Trưởng thành</div>
-                    </div>
-                    <div style={{display: "flex", flexDirection: "row"}}>
-                        {pet.age == "old" ? <img onClick={() => {
-                                pet.age = "old";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                            <img onClick={() => {
-                                pet.age = "old";
-                                setPet(pet);
-                                seta(!a);
-                            }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                        <div>Đã già</div>
-                    </div>
-                </div>
-            </RowLine><RowLine>
-                <Left>
-                    Màu lông:
-                </Left>
-                <Right onChange={(e) => {
-                    pet.color = e.target.value;
-                    setPet(pet);
-                }}/>
-            </RowLine>
-                <RowLine>
-                    <Left >
-                        Giới tính:
-                    </Left>
-                    <div style={{display: 'flex', flexDirection: "row"}}>
-                        <div style={{display: "flex", flexDirection: "row", marginRight: "20px"}}>
-                            {pet.sex == "male" ? <img onClick={() => {
-                                    pet.sex = "male";
-                                    setPet(pet);
-                                    seta(!a);
-                                }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                                <img onClick={() => {
-                                    pet.sex = "male";
-                                    setPet(pet);
-                                    seta(!a);
 
-                                    console.log(pet.sex)
-                                }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                            <div>Đực</div>
-                        </div>
-                        <div style={{display: "flex", flexDirection: "row"}}>
-                            {pet.sex == "female" ? <img onClick={() => {
-                                    pet.sex = "female";
-                                    setPet(pet);
-                                    seta(!a);
-
-                                    console.log(pet.sex)
-
-                                }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                                <img onClick={() => {
-                                    pet.sex = "female";
-                                    setPet(pet);
-                                    seta(!a);
-
-                                    console.log(pet.sex)
-                                }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                            <div>Cái</div>
-                        </div>
-                    </div>
-                </RowLine><RowLine>
-                <Left>
-                    Tình trạng sức khoẻ:
-                </Left>
-                <Right onChange={(e) => {
-                    pet.health_condition = e.target.value;
-                    setPet(pet);
-                }}/>
-            </RowLine><RowLine>
-                <Left>
-                    Cân nặng:
-                </Left>
-                <Right type={"number"} onChange={(e) => {
-                    pet.weight = parseFloat(e.target.value);
-                    setPet(pet);
-                }}/>
-            </RowLine><RowLine>
-                <Left>
-                    Mô tả chi tiết:
-                </Left>
-                <Right onChange={(e) => {
-                    pet.description = e.target.value;
-                    setPet(pet);
-                }}/>
-            </RowLine>
-                <RowLine>
-                    <Left >
-                        Loại:
-                    </Left>
-                    <div style={{display: 'flex', flexDirection: "row"}}>
-                        <div style={{display: "flex", flexDirection: "row", marginRight: "20px"}}>
-                            {pet.species == "dog" ? <img onClick={() => {
-                                    pet.species = "dog";
-                                    setPet(pet);
-                                    seta(!a);
-                                }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                                <img onClick={() => {
-                                    pet.species = "dog";
-                                    setPet(pet);
-                                    seta(!a);
-                                }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                            <div>Chó</div>
-                        </div>
-                        <div style={{display: "flex", flexDirection: "row"}}>
-                            {pet.species == "cat" ? <img onClick={() => {
-                                    pet.species = "cat";
-                                    setPet(pet);
-                                    seta(!a);
-                                }} style={{marginRight: "5px"}} src={"/images/choose.svg"}/> :
-                                <img onClick={() => {
-                                    pet.species = "cat";
-                                    setPet(pet);
-                                    seta(!a);
-                                }} style={{marginRight: "5px"}} src={"/images/unchoose.svg"}/>}
-                            <div>Mèo</div>
-                        </div>
-                    </div>
-                </RowLine>
-                <RowLine>
-                    <Left>
-                        Ảnh:
-                    </Left>
-                    <div>
-                        <input
-                            accept="image/*"
-                            id="contained-button-file"
-                            multiple={true}
-                            onChange={(e) => {
-                                const temp = new FormData();
-
-                                const files = e.target.files;
-
-                                for (let i = 0; i < files.length; i++) {
-                                    console.log(files.length)
-                                    temp.append(`images`, files[i])
-                                }
-                                formData = temp;
-                                console.log(formData)
-
-                            }}
-                            name="image"
-                            type="file"
-                        />
-                    </div>
-                </RowLine>
-                <div>{error}</div>
-                {isLoading ? <>
-                        <SubmitButton> <img src={"/images/loading.gif"} width={20}/></SubmitButton>
-                    </> :
-                    <SubmitButton onClick={async () => {
-                        check();
-                        console.log(pet);
-                        if (error == "") {
-                            await createPet();
-                        }
-                    }}>
-                        Submit
-                    </SubmitButton>
-                }
-            </ActionContainer></>
-    }
 
     const ListPet = () =>{
         return <>
             <ListPetContainer>
                 <PetList>
+                    <div style={{width:"50%",display:"flex",flexDirection:"row",alignItems:"center"}}>
+                        <div style={{fontWeight: "bold", fontSize: "30px",paddingRight:"30px"}}>Danh sách thú cưng</div>
+                        <ActionButton onClick={()=>{router.push("/dashboard/create-pet")}}>Thêm pet</ActionButton>
+                    </div>
                     {listPet?.map((pet)=>{
+                        console.log(pet.id)
                         return <>
                             <BoxPet>
                                 <div style={{display:"flex",flexDirection:"row",height:"100%",alignItems:'center'}}>
@@ -398,13 +220,14 @@ const PetTemplate = () => {
                                     </div>
                                 </div>
                                 <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
-                                    <ActionButton>Chi tiết</ActionButton>
-                                    <ActionButton onClick={()=>{showModal()}} color={"#FF4848"}>Xoá</ActionButton>
-                                    <ModalConfirm/>
+                                    <ActionButton onClick={()=>{router.push({pathname:"/dashboard/pet-detail",query:{id:pet.id}})}}>{"Chi tiết"}</ActionButton>
+                                    <ActionButton onClick={()=>{setIdPet(pet.id);showModal();}} color={"#FF4848"}>Xoá</ActionButton>
+                                    <ModalConfirm />
                                 </div>
                             </BoxPet>
                         </>
                     })}
+                    <div style={{height:"100px"}}/>
                 </PetList>
             </ListPetContainer>
         </>
@@ -413,9 +236,7 @@ const PetTemplate = () => {
     return <>
         <Header/>
         <DashBoardContainer>
-            {
-                mode==="listpet"?<ListPet/>:<AddPet/>
-            }
+            <ListPet/>
         </DashBoardContainer>
         <Footer/>
     </>
