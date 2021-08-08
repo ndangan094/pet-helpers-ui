@@ -34,4 +34,8 @@ const BREAKPOINT_DEFAULT = {
     desktop: 2560,
 };
 
-export {BREAKPOINT,BREAKPOINT_DEFAULT,DEFAULT_DEVICE}
+const WORK_SHIFT = {
+    morning: 'Làm việc buổi sáng',
+    afternoon: 'Làm việc buổi chiều'
+}
+export {BREAKPOINT,BREAKPOINT_DEFAULT,DEFAULT_DEVICE, WORK_SHIFT}

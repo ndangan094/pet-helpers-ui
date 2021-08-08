@@ -22,22 +22,7 @@ const DonatePageTemplate = () => {
       <Header />
       <DonatePageComponent className="home-page-container">
         <Carousel className="carousel" autoplay={true}>
-          <div>
-            <div className="header">
-              <h1>Let's share the hope</h1>
-              <p>Cùng Mẫn Tiên và Persona gây quỹ ủng hộ cho các bé !</p>
-              <Button
-                onClick={() => {
-                  window.open(
-                    "https://www.facebook.com/106942221167144/posts/338774701317227/"
-                  );
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/f789411b-1b6d-4846-a2f4-8bb41ec3eab2.png" />
-          </div>
+          
           <div>
             <div className="header">
               <h1>THEO DÕI CHÚNG MÌNH TRÊN YOUTUBE</h1>

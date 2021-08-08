@@ -4,6 +4,8 @@ import { Row, Col, Carousel, Button } from "antd";
 import "antd/dist/antd.css";
 import { useRouter } from "next/router";
 import { HomePageComponent } from "./styled-components";
+import React from "react";
+import Icon from "@ant-design/icons";
 
 const HomePageTemplate = () => {
   const router = useRouter();
@@ -16,13 +18,14 @@ const HomePageTemplate = () => {
   const handleAdobtClick = () => {
     router.push("/adobt");
   };
-
+  
   return (
     <>
       <Header />
       <HomePageComponent className="home-page-container">
-        <Carousel className="carousel" autoplay={true}>
-          
+        <Carousel
+          className="carousel" autoplay={true}
+        >
           <div>
             <div className="header">
               <h1>THEO DÕI CHÚNG MÌNH TRÊN YOUTUBE</h1>
@@ -140,10 +143,13 @@ const HomePageTemplate = () => {
             <img src="https://hanoipetadoption.com/admin/user-content/Carousel/db696201-c204-49cc-9372-eef3d21c897a.jpg" />
           </div>
         </Carousel>
-        <div data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <Row className="about-us">
-          <Col span={18}>
-            
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-sine"
+        >
+          <Row className="about-us">
+            <Col span={18}>
               <h1>Nhận Nuôi Thú Cưng - Pet Rescure</h1>
               <p>
                 Chúng tôi là một nhóm trẻ gồm tình nguyện viên Việt Nam và một
@@ -158,17 +164,20 @@ const HomePageTemplate = () => {
                 nhận thức về trách nhiệm của chủ nuôi thông qua mạng xã hội và
                 các hoạt động thiện nguyện.
               </p>
-          </Col>
-          
-          <Col span={6}>
-            <img src="https://hanoipetadoption.com/admin/user-content/ca35ac07-24b7-4e83-bddd-866a6a450365.jpg" />
-          </Col>
-        </Row>
+            </Col>
+
+            <Col span={6}>
+              <img src="https://hanoipetadoption.com/admin/user-content/ca35ac07-24b7-4e83-bddd-866a6a450365.jpg" />
+            </Col>
+          </Row>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <Row justify="space-around" className="services">
-          
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-sine"
+        >
+          <Row justify="space-around" className="services">
             <Col span={7} className="service">
               <div className="content">
                 <img src="https://hanoipetadoption.com/admin/user-content/03fc601a-a150-4d55-b051-15d6d3ced88e.jpg" />
@@ -207,8 +216,7 @@ const HomePageTemplate = () => {
                 <Button onClick={handleAdobtClick}>tìm hiểu thêm</Button>
               </div>
             </Col>
-       
-        </Row>
+          </Row>
         </div>
       </HomePageComponent>
       <Footer />
