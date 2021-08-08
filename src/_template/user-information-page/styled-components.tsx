@@ -77,6 +77,7 @@ const SubmitButton = styled.button`
   &:hover{
     cursor: pointer;
   }
+  color: white;
 `;
 
 export {InfoContainer,InfoRoot,RowLine,Left,Right,Text,SubmitButton}

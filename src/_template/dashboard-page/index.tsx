@@ -47,7 +47,7 @@ const DashboardTemplate = () => {
         {(user.role==="admin")?<PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>:null}
       </>
     );
-  }; 
+  };
 
   const DashBoardVolunteer = () => {
     return (

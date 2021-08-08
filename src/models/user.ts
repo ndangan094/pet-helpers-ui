@@ -11,4 +11,3 @@ export interface User {
     role?:string;
 }
 
-// export {User}

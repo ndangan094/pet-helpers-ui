@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/styled-components.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-page/styled-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/create/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-detail-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/veterinary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/detail/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/login-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/login-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,8 @@
       <updated>1628437783784</updated>
       <workItem from="1628437787936" duration="40000" />
       <workItem from="1628437840686" duration="51000" />
-      <workItem from="1628437923575" duration="3012000" />
+      <workItem from="1628437923575" duration="11562000" />
+      <workItem from="1628451149288" duration="2327000" />
     </task>
     <servers />
   </component>

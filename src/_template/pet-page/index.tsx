@@ -163,9 +163,7 @@ const PetTemplate = () => {
                         image: item.images
                     })
                 })
-                console.log("item---->",_item)
                 setListPet(_item);
-                console.log("pet----->",pet)
             }
         } catch (e) {
             return e;
