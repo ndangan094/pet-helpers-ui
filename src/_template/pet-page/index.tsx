@@ -140,6 +140,10 @@ const PetTemplate = () => {
     const getPet = async () => {
         const response = {
             method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
         };
         try {
             const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pets`, response);

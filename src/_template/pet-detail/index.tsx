@@ -109,9 +109,12 @@ const PetDetailTemplate = () => {
 
 
     const getPet = async () => {
-        router.query.id
         const response = {
             method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
         };
         try {
             const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pets/${router.query.id}`, response);
@@ -141,7 +144,8 @@ const PetDetailTemplate = () => {
     }
 
     useEffect(() => {
-        getPet()
+        if (router.query.id)
+            getPet()
     }, [router.query.id])
 
 
@@ -150,7 +154,6 @@ const PetDetailTemplate = () => {
         <DashBoardContainer>
             <ActionContainer>
                 <div style={{paddingBottom: "100px"}}/>
-                <div style={{fontWeight: "bold", fontSize: "30px"}}>Chỉnh sửa thông tin</div>
                 <div style={{height: "30px"}}/>
                 <RowLine>
                     <Left>
@@ -388,13 +391,16 @@ const PetDetailTemplate = () => {
                         const c = await deleteImage();
                         const d = await updatePet();
                         if (c && d) {
-                            if(formData===undefined){
+                            if (formData === undefined) {
                                 setLoading(false);
                                 alert("Cập nhật thú nuôi thành công")
                                 router.push("/dashboard/pet");
-                            }else{
+                            } else {
                                 addImage();
                             }
+                        } else {
+                            setLoading(false);
+                            alert("Đã có lỗi xảy ra");
                         }
                     }}>
                         Cập nhật

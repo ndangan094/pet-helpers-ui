@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c416a2e7-3ebb-4f02-b5aa-9622c8230fcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/create-pet-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/create-pet-page/styled-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/pet-detail/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/pet-detail/styled-components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/create-pet/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/pet-detail/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/adobt-detail/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/adobt-detail/styled-component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/adobt/pet-detail/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/adobt-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/adobt-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/pet-detail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-detail/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/pet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/pet.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1vo5iukpJ5j4fggABtaeVfaHRcC" />
   <component name="ProjectLevelVcsManager">
@@ -79,7 +84,8 @@
       <workItem from="1628082394689" duration="6187000" />
       <workItem from="1628176533707" duration="10462000" />
       <workItem from="1628272147745" duration="5131000" />
-      <workItem from="1628335089896" duration="21052000" />
+      <workItem from="1628335089896" duration="21253000" />
+      <workItem from="1628416407294" duration="7122000" />
     </task>
     <servers />
   </component>

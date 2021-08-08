@@ -10,6 +10,7 @@ import CatPng from '../../../public/pawprint.png'
 import { useState } from "react";
 import { useEffect } from "react";
 import { Pet } from "../../models/pet";
+import { getGender } from "../../hooks/ultis.hook";
 
 
 const AdobtPageTemplate = () => {
@@ -49,6 +50,7 @@ const AdobtPageTemplate = () => {
         console.log(data.pets);
         const _item: Pet[] = data.pets.map((item)=>{
           return({
+            id:item.id,
             name: item.name,
             age: item.age,
             color: item.color,
@@ -56,7 +58,8 @@ const AdobtPageTemplate = () => {
             weight: item.weight,
             description: item.description,
             species: item.species,
-            image: item.images
+            image: item.images,
+            sex:item.gender
           })
         })
         console.log("item---->",_item)
@@ -174,14 +177,14 @@ const AdobtPageTemplate = () => {
             <ListPet>
               {pet?.map((item)=>{
                 return <>
-                <PetBox>
+                <PetBox onClick={()=>{router.push({pathname:"/adobt/pet-detail",query:{id:item.id}})}}>
                   <img style={{width:"100%",height:"219px",objectFit:"cover"}} src={item?.image[0]?.url?item?.image[0]?.url:"https://i.vimeocdn.com/portrait/1274237_300x300.jpg"} />
                   <div style={{fontSize: "1.3125rem",
                     fontWeight: "bold"}}>{item.name}</div>
                   <div style={{width:"50px",height:"2px",backgroundColor:"#cecece"}}>
                   </div>
-                  <Tag isHide={false} tag={"Giới tính:"} value={"Chưa rõ"}/>
-                  <Tag isHide={false} tag={"Tuổi:"} value={item.age}/>
+                  <Tag isHide={false} tag={"Giới tính:"} value={item.sex ==="male"?"Đực":"Cái"}/>
+                  <Tag isHide={false} tag={"Tuổi:"} value={getGender(item.age)}/>
                   <Tag isHide={true} tag={"Sức khoẻ:"} value={item.health_condition}/>
                 </PetBox>
                 </>
