@@ -47,8 +47,11 @@ const LoginPageTemplate = () => {
           access_token:auth,
           role:data.role
         }
-
         localStorage.setItem("userInfo",JSON.stringify(userInfo));
+        router.push('/');
+      }
+      else{
+        alert("Đã có lỗi xảy ra");
       }
     } catch (e) {
       return e;
@@ -73,7 +76,7 @@ const LoginPageTemplate = () => {
         const data = await fetchResponse.json();
         console.log(data);
         await getUserInfo(data.access_token);
-        await router.push('/');
+
 
 
 

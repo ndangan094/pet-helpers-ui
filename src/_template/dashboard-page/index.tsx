@@ -62,7 +62,7 @@ const DashboardTemplate = () => {
     <>
       <Header />
       <DashBoardContainer>
-          {user.role==='admin'?<DashBoardAdmin/>:<></>}
+          {(user.role==='admin' || user.role==='volunteer')?<DashBoardAdmin/>:<></>}
           {user.role==='volunteer'?<DashBoardVolunteer/>:<></>}
 
           {/* <DashBoardAdmin/> */}
