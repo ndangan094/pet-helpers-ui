@@ -23,7 +23,7 @@ const ManageVolunteerPageTemplate = () => {
   const [userList, setUserList] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   // const [userEdit, setUserEdit] = useState();
-  const [roleUserEdit, setRole] = useState('');
+  const [roleUserEdit, setRole] = useState("");
   const [idUserEdit, setId] = useState(-1);
   const [confirmLoading, setConfirmLoading] = useState(false);
   useEffect(() => {
@@ -110,13 +110,36 @@ const ManageVolunteerPageTemplate = () => {
     setOpenModal(false);
   };
 
+  const handleDetailItem = (e: any, record: any) => {
+    e.preventDefault();
+    userList.forEach(ele => {
+      if(ele.id === record.id && ele.role === 'volunteer') {
+        localStorage.setItem('detailVolunteerId', JSON.stringify({id: record.id, name: record.username}))
+        router.push('/detail-volunteer')
+        return;
+      }
+    })
+    
+  };
   const columns = [
+    {
+      title: "Username",
+      dataIndex: "username",
+      render: (value: string, record: any) => (
+        <a href="#!" onClick={(e) => handleDetailItem(e, record)}>
+          {value}
+        </a>
+      ),
+      width: "20%",
+      key: "username",
+    },
+
     {
       title: "First Name",
       dataIndex: "first_name",
       sorter: true,
       render: (text) => <span>{text}</span>,
-      width: "20%",
+      width: "10%",
       key: "first_name",
     },
     {
@@ -124,7 +147,7 @@ const ManageVolunteerPageTemplate = () => {
       dataIndex: "last_name",
       sorter: false,
       render: (text) => <span>{text}</span>,
-      width: "20%",
+      width: "10%",
       key: "last_name",
     },
     {
@@ -133,13 +156,6 @@ const ManageVolunteerPageTemplate = () => {
       render: (email) => <span>{email}</span>,
       width: "20%",
       key: "email",
-    },
-    {
-      title: "Username",
-      dataIndex: "username",
-      render: (username) => <span>{username}</span>,
-      width: "20%",
-      key: "username",
     },
     {
       title: "Role",

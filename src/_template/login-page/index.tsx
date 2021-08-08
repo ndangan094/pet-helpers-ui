@@ -73,7 +73,6 @@ const LoginPageTemplate = () => {
         const data = await fetchResponse.json();
         console.log(data);
         await getUserInfo(data.access_token);
-        alert('login success');
         await router.push('/');
 
 
