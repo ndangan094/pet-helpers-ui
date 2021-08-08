@@ -7,5 +7,6 @@ export interface Pet {
     description?: string,
     species?: string,
     image?: any,
-    sex?:string
+    sex?:string,
+    id?:string
 }
