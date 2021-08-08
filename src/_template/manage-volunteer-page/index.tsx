@@ -16,7 +16,7 @@ import "antd/dist/antd.css";
 import { useRouter } from "next/router";
 import { ManageVolunteerPageComponent } from "./styled-components";
 import React, { useEffect, useState } from "react";
-import { DatabaseFilled, EditOutlined } from "@ant-design/icons";
+import { CloseCircleOutlined, DatabaseFilled, EditOutlined } from "@ant-design/icons";
 
 const ManageVolunteerPageTemplate = () => {
   const router = useRouter();
@@ -112,24 +112,45 @@ const ManageVolunteerPageTemplate = () => {
 
   const handleDetailItem = (e: any, record: any) => {
     e.preventDefault();
-    userList.forEach(ele => {
-      if(ele.id === record.id && ele.role === 'volunteer') {
-        localStorage.setItem('detailVolunteerId', JSON.stringify({id: record.id, name: record.username}))
-        router.push('/detail-volunteer')
+    userList.forEach((ele) => {
+      if (ele.id === record.id && ele.role === "volunteer") {
+        localStorage.setItem(
+          "detailVolunteerId",
+          JSON.stringify({ id: record.id, name: record.username })
+        );
+        router.push("/detail-volunteer");
         return;
       }
-    })
-    
+    });
   };
   const columns = [
     {
       title: "Username",
       dataIndex: "username",
-      render: (value: string, record: any) => (
-        <a href="#!" onClick={(e) => handleDetailItem(e, record)}>
-          {value}
-        </a>
-      ),
+      render: (value: string, record: any) => {
+        if (record.role === "volunteer") {
+          return (
+            <Button
+              type="primary"
+              style={{ width: "150px" }}
+              onClick={(e) => handleDetailItem(e, record)}
+            >
+              {value}
+            </Button>
+          );
+        }
+        return (
+          <p
+            style={{
+              textAlign: "center",
+              width: "150px",
+              display: "inline-block",
+            }}
+          >
+            {value}
+          </p>
+        );
+      },
       width: "20%",
       key: "username",
     },
@@ -161,6 +182,7 @@ const ManageVolunteerPageTemplate = () => {
       title: "Role",
       dataIndex: "role",
       key: "role",
+
       render: (role) => {
         let color = role === "admin" ? "geekblue" : "green";
         if (role === "guest") {
@@ -172,22 +194,46 @@ const ManageVolunteerPageTemplate = () => {
           </Tag>
         );
       },
+      filters: [
+        {
+          text: "VOLUNTEER",
+          value: "volunteer",
+        },
+        {
+          text: "GUEST",
+          value: "guest",
+        },
+        {
+          text: "ADMIN",
+          value: "admin",
+        },
+      ],
+      onFilter: (value, record) => record.role.indexOf(value) === 0,
     },
 
     {
       title: "Action",
       key: "action",
-      render: (value: string, record: any) => (
-        <Space size="middle">
-          <a
-            href="#!"
-            title="Edit user"
-            onClick={(e) => handle_editItem(e, record)}
-          >
-            <EditOutlined />
-          </a>
-        </Space>
-      ),
+      render: (value: string, record: any) => {
+        if (record.role === "admin") {
+          return (
+            <Space size="middle">
+              <CloseCircleOutlined style={{color:'#d4380d', borderColor: '#ffbb96'}}/>
+            </Space>
+          );
+        }
+        return (
+          <Space size="middle">
+            <a
+              href="#!"
+              title="Edit user"
+              onClick={(e) => handle_editItem(e, record)}
+            >
+              <EditOutlined style={{color:'#1890ff'}}/>
+            </a>
+          </Space>
+        );
+      },
     },
   ];
 
@@ -195,7 +241,7 @@ const ManageVolunteerPageTemplate = () => {
     <>
       <Header />
       <ManageVolunteerPageComponent className="home-page-container">
-        <Row justify="center">
+        <Row style={{ marginTop: "100px" }} justify="center">
           <h1>Danh sách User</h1>
         </Row>
         <Table
@@ -220,7 +266,6 @@ const ManageVolunteerPageTemplate = () => {
               className="select-status"
               value={roleUserEdit}
             >
-              <Select.Option value="admin">Admin</Select.Option>
               <Select.Option value="volunteer">Volunteer</Select.Option>
               <Select.Option value="guest">Guest</Select.Option>
             </Select>

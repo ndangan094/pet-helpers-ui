@@ -21,195 +21,90 @@ const DonatePageTemplate = () => {
     <>
       <Header />
       <DonatePageComponent className="home-page-container">
-        <Carousel className="carousel" autoplay={true}>
-          
-          <div>
-            <div className="header">
-              <h1>THEO DÕI CHÚNG MÌNH TRÊN YOUTUBE</h1>
-              <p>Hãy đăng ký và ủng hộ kênh của chúng mình nha!</p>
-              <Button
+      <Row className="adobt-page-header">
+          <div data-aos="fade-up" data-aos-duration="1500" className="adobt-heading-container">
+            <h1>Nhận Nuôi</h1>
+            <div className="breadcrumb">
+              <span
+                className="breadcrumb-item"
                 onClick={() => {
-                  window.open(
-                    "https://www.youtube.com/channel/UCdLb536ht3xSJ6YJ-LF8r3g"
-                  );
+                  router.push("/");
                 }}
               >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/326bea82-ba50-4777-abb6-5e45ba8f3faf.jpeg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>we love pets</h1>
-              <p>
-                Mỗi thú cưng đều cần có cơ hội hi vọng vào một tương lai tốt đẹp
-              </p>
-              <Button
-                onClick={() => {
-                  window.open(
-                    "https://www.facebook.com/hanoipetadoption/posts/1862971080512052"
-                  );
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/a4cdde6d-2f14-417f-8170-bf1704688c25.jpg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>ĐĂNG KÝ LÀM TNV VỚI CHÚNG MÌNH NHÉ!</h1>
-              <p>Xin hãy chia sẻ giảm bớt một phần gánh nặng cho nhóm!</p>
-              <Button
-                onClick={() => {
-                  router.push("/volunteer");
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/fdde3828-0766-4d7b-bd8d-115912ed849f.jpeg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>CÁCH ỦNG HỘ GIÚP ĐỠ NHÓM</h1>
-              <p>
-                Cùng tìm hiểu các hình thức để ủng hộ cho hoạt động của Hanoi
-                Pet Adoption!
-              </p>
-              <Button
-                onClick={() => {
-                  router.push("/donation");
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/d2d09f6a-19cc-41a9-922a-23aeb493bcbf.jpeg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>HÃY NHẬN NUÔI, ĐỪNG XUA ĐUỔI!</h1>
-              <p>
-                Loài vật cũng có tri giác và cảm xúc, chúng cũng biết đau, biết
-                sợ hãi, biết yêu thương và muốn được yêu thương.
-              </p>
-              <Button
-                onClick={() => {
-                  router.push("/adoption");
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/b39e6553-5b33-4fd7-b10a-99ff21bfd5a7.jpg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>CÙNG THAM GIA GROUP YÊU CÚN CỎ NHA!</h1>
-              <p>
-                Các bạn ơi! cùng tham gia group YÊU CÚN CỎ với chúng mình nha !
-              </p>
-              <Button
-                onClick={() => {
-                  window.open("https://www.facebook.com/groups/yeucunco/");
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/5d835eb4-6721-4558-8cb9-f6684a4cd6c0.jpg" />
-          </div>
-          <div>
-            <div className="header">
-              <h1>GHÉ THỊ TRẤN MÈO CHƠI NHÉ CÁC BẠN!</h1>
-              <p>
-                Group của nhóm nhằm chia sẻ kinh nghiệm nuôi và cứu hộ thú cưng.
-              </p>
-              <Button
-                onClick={() => {
-                  window.open(
-                    "https://www.facebook.com/groups/thitranmeohanoipetadoption"
-                  );
-                }}
-              >
-                Xem thêm
-              </Button>
-            </div>
-            <img src="https://hanoipetadoption.com/admin/user-content/Carousel/db696201-c204-49cc-9372-eef3d21c897a.jpg" />
-          </div>
-        </Carousel>
-        <div data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <Row className="about-us">
-          <Col span={18}>
-            
-              <h1>Nhận Nuôi Thú Cưng - Pet Rescure</h1>
-              <p>
-                Chúng tôi là một nhóm trẻ gồm tình nguyện viên Việt Nam và một
-                số bạn nước ngoài, cùng hoạt động vì tình yêu chó mèo. Tôn chỉ
-                hoạt động của chúng tôi là không từ bỏ nỗ lực với bất kỳ con vật
-                nào, dù bé có ốm yếu hay tàn tật tới đâu, bởi mỗi thú cưng đều
-                cần có cơ hội hi vọng vào một tương lai tốt đẹp. Chúng tôi cố
-                gắng chăm sóc tốt nhất có thể, phần nào bù đắp lại những tổn
-                thương cho các bé được cứu hộ về dù là hoang, lạc, bị bỏ rơi hay
-                bạo hành. Ngoài ra, chúng tôi cũng luôn nỗ lực tìm mái ấm yêu
-                thương các bé trọn đời. Và cuối cùng, chúng tôi giúp nâng cao
-                nhận thức về trách nhiệm của chủ nuôi thông qua mạng xã hội và
-                các hoạt động thiện nguyện.
-              </p>
-          </Col>
-          
-          <Col span={6}>
-            <img src="https://hanoipetadoption.com/admin/user-content/ca35ac07-24b7-4e83-bddd-866a6a450365.jpg" />
-          </Col>
-        </Row>
-        </div>
+                Trang chủ
+              </span>
 
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <Row justify="space-around" className="services">
-          
-            <Col span={7} className="service">
-              <div className="content">
-                <img src="https://hanoipetadoption.com/admin/user-content/03fc601a-a150-4d55-b051-15d6d3ced88e.jpg" />
-                <h3>ủng hộ</h3>
-                <p>
-                  Giúp duy trì hoạt động của HPA qua hình thức quyên góp tiền
-                  hoặc nhu yếu phẩm.
-                </p>
-              </div>
-              <div className="text-center">
-                <Button onClick={handleDonateClick}>tìm hiểu thêm</Button>
-              </div>
-            </Col>
-            <Col span={7} className="service">
-              <div className="content">
-                <img src="https://hanoipetadoption.com/admin/user-content/28516d17-6278-4bd4-8eb7-0f3400d07969.jpg" />
-                <h3>tình nguyện</h3>
-                <p>
-                  Hành động để thay đổi cuộc sống của chó, mèo và thú cưng khác.
-                </p>
-              </div>
-              <div className="text-center">
-                <Button onClick={handleVolunteerClick}>tìm hiểu thêm</Button>
-              </div>
-            </Col>
-            <Col span={7} className="service">
-              <div className="content">
-                <img src="https://hanoipetadoption.com/admin/user-content/423cf220-b557-4644-a769-dd508226180d.jpg" />
-                <h3>nhận nuôi</h3>
-                <p>
-                  Hãy nhận nuôi, cưu mang, đừng xua đuổi và yêu thương loài động
-                  vật bị bỏ rơi.
-                </p>
-              </div>
-              <div className="text-center">
-                <Button onClick={handleAdobtClick}>tìm hiểu thêm</Button>
-              </div>
-            </Col>
-       
+              <span className="breadcrumb-active"> / Nhận Nuôi</span>
+            </div>
+          </div>
         </Row>
-        </div>
+        <Row style={{backgroundColor:"white"}} className="adobt-page-content" data-aos="zoom-in" data-aos-duration="1500" >
+          <Col span={5}></Col>
+          <Col span={14}>
+            <Row>
+              <Col className="process" span={16}>
+                <h3>quy trình nhận nuôi</h3>
+                <hr />
+                <p>
+                  Trước khi quyết định nhận nuôi bé chó hay mèo nào, bạn hãy tự
+                  hỏi bản thân rằng mình đã sẵn sàng để chịu trách nhiệm cả đời
+                  cho bé chưa, cả về tài chính, nơi ở cũng như tinh thần. Việc
+                  nhận nuôi cần được sự đồng thuận lớn từ bản thân bạn cũng như
+                  gia đình và những người liên quan. Xin cân nhắc kỹ trước khi
+                  liên hệ với HPA về việc nhận nuôi.
+                  <br />
+                  <br />
+                  Bạn đã sẵn sàng? Hãy thực hiện các bước sau đây nhé:
+                  <br />
+                  <br />
+                  1️⃣ Tìm hiểu về thú cưng bạn muốn nhận nuôi trên trang web của
+                  HPA.
+                  <br />
+                  2️⃣ Liên hệ với Tình nguyện viên phụ trách bé để tìm hiểu thêm
+                  về bé.
+                  <br />
+                  3️⃣ Tham gia phỏng vấn nhận nuôi.
+                  <br />
+                  4️⃣ Chuẩn bị cơ sở vật chất, ký giấy tờ nhận nuôi và đóng tiền
+                  vía để đón bé về.
+                  <br />
+                  5️⃣ Thường xuyên cập nhật về tình hình của bé, đặc biệt là khi
+                  có sự cố để được tư vấn kịp thời.
+                  <br />
+                  <br />
+                  ❗ Lưu ý:
+                  <br />
+                  - Chỉ inbox 01 Tình nguyện viên phỏng vấn, KHÔNG NÊN inbox tất
+                  cả danh sách. Trường hợp TNV chưa phản hồi lại trong vòng 1
+                  ngày, vui lòng inbox cho Page.
+                  <br />- Phần phỏng vấn có thể có nhiều câu hỏi mang tính chất
+                  riêng tư, vì vậy mong bạn hãy kiên nhẫn nhé!
+                  <br></br>
+                  - Trường hợp không nuôi được tiếp cần trả lại cho Nhóm, không
+                  tự ý đem cho người khác.
+                  <br />
+                  <br />
+                  🐕‍🦺 Nếu bạn chỉ có thể chăm sóc tạm thời (foster), tham khảo
+                  thông tin tại mục Tình nguyện.
+                  <br />
+                  <br />
+                  🐈 Tìm hiểu thêm về chương trình Nhận nuôi Ảo ở banner cuối
+                  trang này.
+                </p>
+              </Col>
+              <Col span={6}>
+                <div className="condition">
+                  <img
+                    width="100%"
+                    src="https://hanoipetadoption.com/admin/user-content/5d4d003a-2692-4ba4-aa87-34721ef49644.jpg"
+                  />
+                </div>
+              </Col>
+            </Row>
+          
+          </Col>
+          <Col span={5}></Col>
+        </Row>
       </DonatePageComponent>
       <Footer />
     </>

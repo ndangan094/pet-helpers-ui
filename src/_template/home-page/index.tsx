@@ -10,7 +10,7 @@ import Icon from "@ant-design/icons";
 const HomePageTemplate = () => {
   const router = useRouter();
   const handleDonateClick = () => {
-    router.push("/donation");
+    router.push("/donate");
   };
   const handleVolunteerClick = () => {
     router.push("/volunteer");
@@ -24,7 +24,7 @@ const HomePageTemplate = () => {
       <Header />
       <HomePageComponent className="home-page-container">
         <Carousel
-          className="carousel" autoplay={true}
+          className="carousel" autoplay
         >
           <div>
             <div className="header">

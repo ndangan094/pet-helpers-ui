@@ -118,7 +118,6 @@ const DetailVolunteerPageTemplate = () => {
   }
   const getUserDetail = () => {
     let info = JSON.parse(localStorage.getItem('detailVolunteerId'))
-    console.log(info)
     return info;
   }
   const onPanelChange = (date, mode) => {
