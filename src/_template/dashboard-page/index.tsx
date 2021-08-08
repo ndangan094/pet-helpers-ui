@@ -36,18 +36,18 @@ const DashboardTemplate = () => {
   const DashBoardAdmin = () => {
     return (
       <>
-        <PetTag
-          onClick={() => {
-            router.push("/dashboard/pet");
-          }}
-        >
-          Quản lý pet
-        </PetTag>
+          {(user.role==="admin"||user.role=="volunteer")?<PetTag
+              onClick={() => {
+                  router.push("/dashboard/pet");
+              }}
+          >
+              Quản lý pet
+          </PetTag>:null}
 
-        <PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>
+        {(user.role==="admin")?<PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>:null}
       </>
     );
-  };
+  }; 
 
   const DashBoardVolunteer = () => {
     return (
@@ -62,8 +62,10 @@ const DashboardTemplate = () => {
     <>
       <Header />
       <DashBoardContainer>
-          {(user.role==='admin' )?<DashBoardAdmin/>:<></>}
+          <DashBoardAdmin/>
           {user.role==='volunteer'?<DashBoardVolunteer/>:<></>}
+          <PetTag onClick={()=>{router.push('/dashboard/veterinary-clinic')}}>Quản lý phòng khám</PetTag>
+
 
           {/* <DashBoardAdmin/> */}
       </DashBoardContainer>

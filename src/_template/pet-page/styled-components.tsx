@@ -22,7 +22,7 @@ const ActionRow = styled.div`
 `;
 
 const ActionButton = styled.div`
-  width: 100px;
+  //width: 100px;
   background-color: ${props => props.color ?props.color:"mediumpurple"};
   padding: 5px 10px 5px 10px;
   border: 1px solid ${props => props.color ?props.color:"mediumpurple"};

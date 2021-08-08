@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c416a2e7-3ebb-4f02-b5aa-9622c8230fcb" name="Default Changelist" comment="">
+    <list default="true" id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/styled-components.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-page/styled-components.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/create/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/login-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/login-page/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/styled-components.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,23 +22,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1vo5iukpJ5j4fggABtaeVfaHRcC" />
+  <component name="ProjectId" id="1wS2gHH4kmhYuRU4OxeWYZXn9n5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -39,49 +39,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ndang\Desktop\pet-helpers-ui\public\images" />
-      <recent name="C:\Users\ndang\Desktop\pet-helpers-ui\src\_template" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c416a2e7-3ebb-4f02-b5aa-9622c8230fcb" name="Default Changelist" comment="" />
-      <created>1627215734830</created>
+      <changelist id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="" />
+      <created>1628437783784</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627215734830</updated>
-      <workItem from="1627215738585" duration="647000" />
-      <workItem from="1627226973564" duration="1002000" />
-      <workItem from="1627228432710" duration="4007000" />
-      <workItem from="1627290414981" duration="10000" />
-      <workItem from="1627308477173" duration="11265000" />
-      <workItem from="1627544195430" duration="63000" />
-      <workItem from="1627736826593" duration="593000" />
-      <workItem from="1627820649060" duration="12247000" />
-      <workItem from="1627879958956" duration="9032000" />
-      <workItem from="1627954510483" duration="633000" />
-      <workItem from="1628082394689" duration="6187000" />
-      <workItem from="1628176533707" duration="10462000" />
-      <workItem from="1628272147745" duration="5131000" />
-      <workItem from="1628335089896" duration="21253000" />
-      <workItem from="1628416407294" duration="7786000" />
+      <updated>1628437783784</updated>
+      <workItem from="1628437787936" duration="40000" />
+      <workItem from="1628437840686" duration="51000" />
+      <workItem from="1628437923575" duration="3012000" />
     </task>
     <servers />
   </component>
@@ -99,8 +78,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
