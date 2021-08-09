@@ -39,7 +39,12 @@ const ManageSponsorPageTemplate = () => {
 
   const getListSponsor = async () => {
     try {
-      let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      let userInfo;
+      const ISSERVER = typeof window === "undefined";
+      if(!ISSERVER){
+        userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      }
+
       // console.log(userInfo.access_token)
       const settings = {
         method: "GET",
@@ -69,7 +74,10 @@ const ManageSponsorPageTemplate = () => {
 
   const handleAddDonate = (e, record) => {
     e.preventDefault();
-    localStorage.setItem("sponsorAddDonateId", JSON.stringify(record));
+    const ISSERVER = typeof window === "undefined";
+    if(!ISSERVER){
+      localStorage.setItem("sponsorAddDonateId", JSON.stringify(record));
+    }
     setOpenAddDonate(true);
   };
 
@@ -84,7 +92,11 @@ const ManageSponsorPageTemplate = () => {
 
   const addSponsor = async (values) => {
     try {
-      let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      let userInfo;
+      const ISSERVER = typeof window === "undefined";
+      if(!ISSERVER){
+        userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      }
       // console.log(userInfo.access_token)
       const settings = {
         method: "POST",
@@ -110,10 +122,18 @@ const ManageSponsorPageTemplate = () => {
   };
   const addDonate = async (values) => {
     try {
-      let userInfo = JSON.parse(localStorage.getItem("userInfo"));
-      // console.log(userInfo.access_token)
+      let userInfo
+      let b;
+      const ISSERVER = typeof window === "undefined";
+      if(!ISSERVER){
+        userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        b =  localStorage.getItem("sponsorAddDonateId")
+      }
+
+
+
       values.sponsor_id = JSON.parse(
-        localStorage.getItem("sponsorAddDonateId")
+        b
       ).id;
       const settings = {
         method: "POST",
@@ -219,7 +239,11 @@ const ManageSponsorPageTemplate = () => {
     let first_last = getWorkSchedule();
     console.log(first_last);
     try {
-      let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      let userInfo
+      const ISSERVER = typeof window === "undefined";
+      if(!ISSERVER){
+        userInfo =  JSON.parse(localStorage.getItem("userInfo"));
+      }
       // console.log(userInfo.access_token)
       const settings = {
         method: "GET",
@@ -276,8 +300,12 @@ const ManageSponsorPageTemplate = () => {
   }
 
   const getSponsorAddDonateInfo = () => {
-    let info = JSON.parse(localStorage.getItem('sponsorAddDonateId'))
-    return info.first_name + ' ' + info.last_name;
+    let info
+    const ISSERVER = typeof window === "undefined";
+    if(!ISSERVER){
+      info =  JSON.parse(localStorage.getItem('sponsorAddDonateId'))
+    }
+    return info?.first_name + ' ' + info?.last_name;
   }
 
   return (

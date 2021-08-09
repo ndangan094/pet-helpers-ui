@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_template/update-password-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/password/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/health-report-detail-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/health-report-detail-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/login-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/login-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_template/manage-sponsor-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/manage-sponsor-page/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
