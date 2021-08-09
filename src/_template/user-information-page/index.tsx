@@ -3,10 +3,11 @@ import {User} from "../../models/user";
 import {InfoContainer, InfoRoot, Left, Right, RowLine, SubmitButton, Text} from "./styled-components";
 import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
+import { useRouter } from "next/router";
 
 const UserInfoPage = () => {
 
-
+    const router = useRouter();
     const [user, setUser] = useState<User>(undefined);
     const [userFromServer, setUserFromServer] = useState<User>(undefined);
 
@@ -128,6 +129,11 @@ const UserInfoPage = () => {
                         userFromServer.phone_number = e.target.value;
                         setUserFromServer(userFromServer);
                     }} defaultValue={userFromServer?.phone_number}/>
+                </RowLine>
+                <RowLine>
+                    <Left>
+                    </Left>
+                    <div onClick={()=>{router.push("/user/password")}} style={{fontSize:"16px",color:"#3D7CF7",textDecoration:"underline",cursor:"pointer"}}>Cập nhật mật khẩu</div>
                 </RowLine>
                 <SubmitButton onClick={async () => {
                     await changeUserInfo();

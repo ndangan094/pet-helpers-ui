@@ -12,7 +12,7 @@ import {
 import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
 import axios from "axios";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
 const UpdatePasswordTemplate = () => {
     const router = useRouter();
@@ -20,7 +20,7 @@ const UpdatePasswordTemplate = () => {
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState("");
+    const [error, setError] = useState(undefined);
 
 
     useEffect(() => {
@@ -29,30 +29,45 @@ const UpdatePasswordTemplate = () => {
 
 
     const check = () => {
-        setError("");
-        if (currentPassword === "")
+        if (currentPassword === "") {
             setError("Vui lòng nhập mật khẩu hiện tại");
-        else if (newPassword === "")
+            return false;
+        } else if (newPassword === "") {
             setError("Vui lòng nhập mật khẩu mới");
-        else if (confirmPassword === "")
+            return false;
+
+        } else if (confirmPassword === "") {
             setError("Vui lòng nhập mật khẩu xác nhận");
-        else if (currentPassword != user.password) {
-            setError("Mật khẩu hiện tại không đúng");
+            return false;
+
+        } else if (currentPassword != user.password) {
+            {
+                setError("Mật khẩu hiện tại không đúng");
+                return false;
+            }
         } else if (newPassword != confirmPassword) {
-            setError("Mật khẩu xác nhận không đúng");
+            {
+                setError("Mật khẩu xác nhận không đúng");
+                return false;
+            }
+        } else {
+            {
+                setError("");
+                return true;
+            }
         }
     }
 
     const logout = () => {
         localStorage.removeItem('userInfo');
-            router.push("/");
+        router.push("/");
     }
 
     const updatePassword = async () => {
         try {
             axios.put(`${process.env.NEXT_PUBLIC_BASE_URL}/users/password`, {
-                "current_password": user.password,
-                "update_password": newPassword
+                    "current_password": user.password,
+                    "update_password": newPassword
                 }, {
                     headers: {
                         "Authorization": `Bearer ${user.access_token}`
@@ -60,7 +75,7 @@ const UpdatePasswordTemplate = () => {
                 }
             ).then(res => {
                 if (res.status == 200) {
-                    alert("Cập nhật mật khẩu thành công thành công");
+                    alert("Cập nhật mật khẩu thành công");
                     logout();
                 } else {
                     alert("Đã có lỗi xảy ra");
@@ -71,7 +86,6 @@ const UpdatePasswordTemplate = () => {
             return e;
         }
     }
-
 
 
     return (<>
@@ -112,8 +126,8 @@ const UpdatePasswordTemplate = () => {
                 </RowLine>
                 <div style={{color: "red", fontSize: "16px"}}>{error}</div>
                 <SubmitButton onClick={async () => {
-                    check();
-                    if (error === "") {
+                   let a = check();
+                    if (a ) {
                         await updatePassword();
                     }
                 }}>
