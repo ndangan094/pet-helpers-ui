@@ -23,7 +23,7 @@ const LoginPageTemplate = () => {
   }, [isLoginClicked])
 
 
-  const getUserInfo = async (auth) => {
+  const getUserInfo = async (auth,password) => {
     const response = {
       method: 'GET',
       headers: {
@@ -45,7 +45,8 @@ const LoginPageTemplate = () => {
           phone_number:data.phone_number,
           username:data.username,
           access_token:auth,
-          role:data.role
+          role:data.role,
+          password:password
         }
         localStorage.setItem("userInfo",JSON.stringify(userInfo));
         router.push('/');
@@ -75,7 +76,7 @@ const LoginPageTemplate = () => {
       if(fetchResponse.status==200){
         const data = await fetchResponse.json();
         console.log(data);
-        await getUserInfo(data.access_token);
+        await getUserInfo(data.access_token,password);
 
       }else{
         alert("Đã có lỗi xảy ra")

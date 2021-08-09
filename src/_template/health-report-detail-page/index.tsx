@@ -32,7 +32,7 @@ const HealthReportDetailTemplate = () => {
                 }
             ).then(res => {
                 if (res.status == 200) {
-                    alert("Cập nhật báo thành công");
+                    alert("Cập nhật báo cáo thành công");
                     window.history.back();
                 } else {
                     alert("Đã có lỗi xảy ra");
