@@ -169,9 +169,9 @@ const AdobtPageTemplate = () => {
           <FindPetComponent>
             <div style={{fontSize:"30px",fontWeight:"bold",textAlign:'center'}}>TÌM THÚ CƯNG</div>
             <PetCategory>
-              <PetTag onClick={()=>{chooseCategory("")}} isPick={petCategory === ""}>Tất cả</PetTag>
-              <PetTag onClick={()=>{chooseCategory("dog")}} isPick={petCategory === "dog"}>Chó</PetTag>
-              <PetTag onClick={()=>{chooseCategory("cat")}} isPick={petCategory === "cat"}>Mèo</PetTag>
+              <PetTag style={{backgroundColor:(petCategory === "")?"#018ae0":"#fc0"}} onClick={()=>{chooseCategory("")}}>Tất cả</PetTag>
+              <PetTag style={{backgroundColor:(petCategory === "dog")?"#018ae0":"#fc0"}} onClick={()=>{chooseCategory("dog")}}>Chó</PetTag>
+              <PetTag style={{backgroundColor:(petCategory === "cat")?"#018ae0":"#fc0"}} onClick={()=>{chooseCategory("cat")}}>Mèo</PetTag>
             </PetCategory>
           </FindPetComponent>
             <ListPet>
