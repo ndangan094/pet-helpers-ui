@@ -4,6 +4,7 @@ import { Row, Col, Carousel, Button } from "antd";
 import "antd/dist/antd.css";
 import { useRouter } from "next/router";
 import { DonatePageComponent } from "./styled-conponents";
+import { BankOutlined } from "@ant-design/icons";
 
 const DonatePageTemplate = () => {
   const router = useRouter();
@@ -21,9 +22,13 @@ const DonatePageTemplate = () => {
     <>
       <Header />
       <DonatePageComponent className="home-page-container">
-      <Row className="adobt-page-header">
-          <div data-aos="fade-up" data-aos-duration="1500" className="adobt-heading-container">
-            <h1>Nhận Nuôi</h1>
+        <Row className="adobt-page-header">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            className="adobt-heading-container"
+          >
+            <h1>Ủng hộ</h1>
             <div className="breadcrumb">
               <span
                 className="breadcrumb-item"
@@ -34,76 +39,77 @@ const DonatePageTemplate = () => {
                 Trang chủ
               </span>
 
-              <span className="breadcrumb-active"> / Nhận Nuôi</span>
+              <span className="breadcrumb-active"> / Ủng Hộ</span>
             </div>
           </div>
         </Row>
-        <Row style={{backgroundColor:"white"}} className="adobt-page-content" data-aos="zoom-in" data-aos-duration="1500" >
+        <Row
+          style={{ backgroundColor: "white" }}
+          className="adobt-page-content"
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+        >
           <Col span={5}></Col>
           <Col span={14}>
-            <Row>
-              <Col className="process" span={16}>
-                <h3>quy trình nhận nuôi</h3>
+          <Row justify="space-between">
+              <Col className="process" span={15}>
+                <h3>Tôi muốn ủng hộ</h3>
                 <hr />
                 <p>
-                  Trước khi quyết định nhận nuôi bé chó hay mèo nào, bạn hãy tự
-                  hỏi bản thân rằng mình đã sẵn sàng để chịu trách nhiệm cả đời
-                  cho bé chưa, cả về tài chính, nơi ở cũng như tinh thần. Việc
-                  nhận nuôi cần được sự đồng thuận lớn từ bản thân bạn cũng như
-                  gia đình và những người liên quan. Xin cân nhắc kỹ trước khi
-                  liên hệ với HPA về việc nhận nuôi.
-                  <br />
-                  <br />
-                  Bạn đã sẵn sàng? Hãy thực hiện các bước sau đây nhé:
-                  <br />
-                  <br />
-                  1️⃣ Tìm hiểu về thú cưng bạn muốn nhận nuôi trên trang web của
-                  HPA.
-                  <br />
-                  2️⃣ Liên hệ với Tình nguyện viên phụ trách bé để tìm hiểu thêm
-                  về bé.
-                  <br />
-                  3️⃣ Tham gia phỏng vấn nhận nuôi.
-                  <br />
-                  4️⃣ Chuẩn bị cơ sở vật chất, ký giấy tờ nhận nuôi và đóng tiền
-                  vía để đón bé về.
-                  <br />
-                  5️⃣ Thường xuyên cập nhật về tình hình của bé, đặc biệt là khi
-                  có sự cố để được tư vấn kịp thời.
-                  <br />
-                  <br />
-                  ❗ Lưu ý:
-                  <br />
-                  - Chỉ inbox 01 Tình nguyện viên phỏng vấn, KHÔNG NÊN inbox tất
-                  cả danh sách. Trường hợp TNV chưa phản hồi lại trong vòng 1
-                  ngày, vui lòng inbox cho Page.
-                  <br />- Phần phỏng vấn có thể có nhiều câu hỏi mang tính chất
-                  riêng tư, vì vậy mong bạn hãy kiên nhẫn nhé!
-                  <br></br>
-                  - Trường hợp không nuôi được tiếp cần trả lại cho Nhóm, không
-                  tự ý đem cho người khác.
-                  <br />
-                  <br />
-                  🐕‍🦺 Nếu bạn chỉ có thể chăm sóc tạm thời (foster), tham khảo
-                  thông tin tại mục Tình nguyện.
-                  <br />
-                  <br />
-                  🐈 Tìm hiểu thêm về chương trình Nhận nuôi Ảo ở banner cuối
-                  trang này.
+                Mọi hoạt động cứu hộ của Pet Rescure hoàn toàn dựa trên các
+                  khoản quyên góp từ cộng đồng. Chi phí trung bình hàng tháng
+                  của nhóm rơi vào khoảng 70 triệu đồng, bao gồm tiền thuê nhà,
+                  tiền viện phí, thức ăn, điện, nước, thuốc men và đồ dùng, bỉm
+                  tã, lương hỗ trợ các bạn tnv dọn dẹp... Nhóm rất cần sự giúp
+                  đỡ của các bạn để có thể duy trì nhà chung cũng như đội cứu
+                  hộ. Chỉ cần cố định 50k - 100k hàng tháng là các bạn đã giúp
+                  đỡ được cho nhóm và cách bé rất nhiều! Chi phí sẽ được chia
+                  đều cho các bé khác còn nằm viện và gây dựng nhà chung. Ngoài
+                  ra Nhóm cũng tiếp nhận quyên góp bằng hiện vật như quần áo cũ
+                  (để lót chuồng), bỉm, găng tay y tế, thức ăn, cát vệ sinh
+                  v.v...
                 </p>
               </Col>
               <Col span={6}>
                 <div className="condition">
                   <img
                     width="100%"
-                    src="https://hanoipetadoption.com/admin/user-content/5d4d003a-2692-4ba4-aa87-34721ef49644.jpg"
+                    src="https://hanoipetadoption.com/admin/user-content/256b940f-9028-443d-8fcf-f39f5f1618af.jpg"
                   />
                 </div>
               </Col>
             </Row>
-          
           </Col>
           <Col span={5}></Col>
+        </Row>
+        <Row justify="center">
+          <Col
+            span={12}
+            data-aos="fade-up-right"
+            data-aos-duration="1500"
+            className="regis-container"
+          >
+            <Row>
+              <Col span={16}>
+                <h4 style={{textAlign:'left'}}>ủng hộ ngay</h4>
+                <p style={{textAlign:'left'}}>
+                  <BankOutlined style={{ color: "#d61c62" }} /> MB Bank - Kiều
+                  Thế Vinh - 8050101239999
+                  <br />
+                </p>
+                <p style={{textAlign:'left'}}>
+                  <BankOutlined style={{ color: "#d61c62" }} /> BIDV    - Kiều Thế
+                  Vinh - 1234567899999
+                  <br />
+                </p>
+                <p style={{textAlign:'left'}}>
+                  <BankOutlined style={{ color: "#d61c62" }} /> MB Bank - Kiều
+                  Thế Vinh - 8050101239999
+                  <br />
+                </p>
+              </Col>
+            </Row>
+          </Col>
         </Row>
       </DonatePageComponent>
       <Footer />

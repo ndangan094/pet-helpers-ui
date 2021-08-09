@@ -23,7 +23,7 @@ import {
 const DashboardTemplate = () => {
   const router = useRouter();
   const [pet, setPet] = useState<Pet>({ name: "" });
-  const [user, setUser] = useState({role: 'guest'});
+  const [user, setUser] = useState({ role: "guest" });
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("userInfo")));
@@ -36,15 +36,26 @@ const DashboardTemplate = () => {
   const DashBoardAdmin = () => {
     return (
       <>
-          {(user.role==="admin"||user.role=="volunteer")?<PetTag
-              onClick={() => {
-                  router.push("/dashboard/pet");
-              }}
+        {user.role === "admin" || user.role == "volunteer" ? (
+          <PetTag
+            onClick={() => {
+              router.push("/dashboard/pet");
+            }}
           >
-              Quản lý pet
-          </PetTag>:null}
+            Quản lý pet
+          </PetTag>
+        ) : null}
 
-        {(user.role==="admin")?<PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>:null}
+        {user.role === "admin" ? (
+          <PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>
+        ) : null}
+        <PetTag
+          onClick={() => {
+            router.push("/manage-sponsor");
+          }}
+        >
+          Quản lý người ủng hộ
+        </PetTag>
       </>
     );
   };
@@ -52,21 +63,42 @@ const DashboardTemplate = () => {
   const DashBoardVolunteer = () => {
     return (
       <>
-        <PetTag onClick={()=>{router.push('/dashboard/workschedule')}}>Lịch làm việc</PetTag>
+        <PetTag
+          onClick={() => {
+            router.push("/dashboard/workschedule");
+          }}
+        >
+          Lịch làm việc
+        </PetTag>
       </>
     );
   };
-
 
   return (
     <>
       <Header />
       <DashBoardContainer>
-          <DashBoardAdmin/>
-          {user.role==='volunteer'?<DashBoardVolunteer/>:<></>}
-          <PetTag onClick={()=>{router.push('/dashboard/veterinary-clinic')}}>Quản lý phòng khám</PetTag>
-        {((user.role==="admin"||user.role=="volunteer"))?<PetTag onClick={()=>{router.push('/dashboard/health-report')}}>Báo cáo sức khoẻ</PetTag>:null}
+        {user.role === "admin" ? <DashBoardAdmin /> : <></>}
+        {user.role === "volunteer" ? <DashBoardVolunteer /> : <></>}
 
+        {user.role === "admin" || user.role == "volunteer" ? (
+          <>
+            <PetTag
+              onClick={() => {
+                router.push("/dashboard/health-report");
+              }}
+            >
+              Báo cáo sức khoẻ
+            </PetTag>
+            <PetTag
+              onClick={() => {
+                router.push("/dashboard/veterinary-clinic");
+              }}
+            >
+              Quản lý phòng khám
+            </PetTag>
+          </>
+        ) : null}
 
         {/* <DashBoardAdmin/> */}
       </DashBoardContainer>
