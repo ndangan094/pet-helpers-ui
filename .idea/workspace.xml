@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_template/health-report-create-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/health-report-detail-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_template/health-report-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/health-report.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/create/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/detail/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1wS2gHH4kmhYuRU4OxeWYZXn9n5" />
   <component name="ProjectLevelVcsManager">
@@ -62,7 +64,7 @@
       <workItem from="1628437840686" duration="51000" />
       <workItem from="1628437923575" duration="11562000" />
       <workItem from="1628451149288" duration="2327000" />
-      <workItem from="1628476183181" duration="17759000" />
+      <workItem from="1628476183181" duration="27294000" />
     </task>
     <servers />
   </component>

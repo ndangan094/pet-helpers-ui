@@ -117,8 +117,11 @@ const DetailVolunteerPageTemplate = () => {
     );
   }
   const getUserDetail = () => {
+    const ISSERVER = typeof window === "undefined";
+    if(!ISSERVER){
     let info = JSON.parse(localStorage.getItem('detailVolunteerId'))
     return info;
+    }
   }
   const onPanelChange = (date, mode) => {
     setViewMonth(date._d.getMonth() + 1);
@@ -135,7 +138,7 @@ const DetailVolunteerPageTemplate = () => {
       >
         <Row style={{ margin: "50px" }} align="middle" justify="center">
           <Col span={5}>
-            <h1 style={{textAlign: 'center'}}>Lịch làm việc của {getUserDetail().name} </h1>
+            <h1 style={{textAlign: 'center'}}>Lịch làm việc của {getUserDetail()?.name} </h1>
           </Col>
 
         </Row>

@@ -44,6 +44,7 @@ const SignUpPageTemplate = () => {
       })
     };
     try {
+      // @ts-ignore
       const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, settings);
       const data = await fetchResponse.json();
       console.log(data);

@@ -29,7 +29,7 @@ const PetTag = styled.button`
   font-weight: bold;
   border: 2px solid;
   border-radius: 40px;
-  background-color: ${props => props.isPick ?"#018ae0":"#fc0"};
+  background-color: #018ae0;
   margin: 0 10px 0 10px;
   &:hover{
     background-color: #018ae0;
