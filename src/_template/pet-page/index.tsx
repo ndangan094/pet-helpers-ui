@@ -221,11 +221,18 @@ const PetTemplate = () => {
                                         <div style={{fontSize:"16px"}}>Sức khoẻ: {pet?.health_condition}</div>
                                     </div>
                                 </div>
-                                <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
-                                    <ActionButton onClick={()=>{router.push({pathname:"/dashboard/pet-detail",query:{id:pet.id}})}}>{"Chi tiết"}</ActionButton>
-                                    <ActionButton onClick={()=>{setIdPet(pet.id);showModal();}} color={"#FF4848"}>Xoá</ActionButton>
-                                    <ModalConfirm />
+                                <div style={{display:"flex",flexDirection:"row",height:"100%"}}>
+                                    <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
+                                        <ActionButton onClick={()=>{router.push({pathname:"/dashboard/health-report/create",query:{id:pet.id,name:pet.name}})}}>Tạo báo cáo</ActionButton>
+                                        <ActionButton onClick={()=>{router.push({pathname:"/dashboard/health-report",query:{id:pet.id}})}}>Danh sách báo cáo</ActionButton>
+                                    </div>
+                                    <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
+                                        <ActionButton onClick={()=>{router.push({pathname:"/dashboard/pet-detail",query:{id:pet.id}})}}>{"Chi tiết"}</ActionButton>
+                                        <ActionButton onClick={()=>{setIdPet(pet.id);showModal();}} color={"#FF4848"}>Xoá</ActionButton>
+                                        <ModalConfirm />
+                                    </div>
                                 </div>
+
                             </BoxPet>
                         </>
                     })}

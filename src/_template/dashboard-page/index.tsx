@@ -65,9 +65,10 @@ const DashboardTemplate = () => {
           <DashBoardAdmin/>
           {user.role==='volunteer'?<DashBoardVolunteer/>:<></>}
           <PetTag onClick={()=>{router.push('/dashboard/veterinary-clinic')}}>Quản lý phòng khám</PetTag>
+        {((user.role==="admin"||user.role=="volunteer"))?<PetTag onClick={()=>{router.push('/dashboard/health-report')}}>Báo cáo sức khoẻ</PetTag>:null}
 
 
-          {/* <DashBoardAdmin/> */}
+        {/* <DashBoardAdmin/> */}
       </DashBoardContainer>
       <Footer />
     </>

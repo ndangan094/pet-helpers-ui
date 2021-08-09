@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f73d1d-acdf-4c2c-badf-d4544a822097" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_template/veterinary-detail-page/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/veterinary.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/veterinary-clinic/detail/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/health-report-create-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/health-report-detail-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_template/health-report-page/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/health-report.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/create/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/detail/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/health-report/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/dashboard-page/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/pet-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/user-information-page/styled-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/veterinary-create-page/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/_template/veterinary-page/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/ultis.hook.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -62,6 +62,7 @@
       <workItem from="1628437840686" duration="51000" />
       <workItem from="1628437923575" duration="11562000" />
       <workItem from="1628451149288" duration="2327000" />
+      <workItem from="1628476183181" duration="17759000" />
     </task>
     <servers />
   </component>
@@ -79,5 +80,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/_template/pet-page/index.tsx</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

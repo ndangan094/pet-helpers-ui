@@ -133,6 +133,9 @@ const VeterinaryTemplate = () => {
                                     <div style={{fontSize: "16px"}}>Email: {veter?.email}</div>
                                 </div>
                             </div>
+                            <div style={{display:"flex",flexDirection:"row",height:"100%"}}>
+                                <div style={{display:"flex",flexDirection:"column",height:"100%",justifyContent:'space-evenly'}}>
+                                </div>
                             <div style={{
                                 display: "flex",
                                 flexDirection: "column",
@@ -147,7 +150,10 @@ const VeterinaryTemplate = () => {
                                     setVeterName(veter.name);
                                     showModal();
                                 }}>Xoá</ActionButton>
+                                <ActionButton onClick={()=>{router.push({pathname:"/dashboard/health-report",query:{veterinary_clinic_id:veter.id}})}}>Danh sách báo cáo</ActionButton>
+
                                 <ModalConfirm/>
+                            </div>
                             </div>
                         </BoxPet>
                     </>
