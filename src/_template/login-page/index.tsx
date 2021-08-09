@@ -52,7 +52,8 @@ const LoginPageTemplate = () => {
         router.push('/');
       }
       else{
-        alert("Đã có lỗi xảy ra");
+        const data = await fetchResponse.json()
+        console.log(data)
       }
     } catch (e) {
       return e;
@@ -79,7 +80,8 @@ const LoginPageTemplate = () => {
         await getUserInfo(data.access_token,password);
 
       }else{
-        alert("Đã có lỗi xảy ra")
+        const data = await fetchResponse.json()
+        alert(data.detail)
       }
     } catch (e) {
       return e;

@@ -46,9 +46,14 @@ const SignUpPageTemplate = () => {
     try {
       // @ts-ignore
       const fetchResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, settings);
+      
       const data = await fetchResponse.json();
-      console.log(data);
-      router.push('/login')
+      if(fetchResponse.status==200){
+        router.push('/login')
+      }
+      else {
+        alert(data.detail)
+      }
     } catch (e) {
       return e;
     }
