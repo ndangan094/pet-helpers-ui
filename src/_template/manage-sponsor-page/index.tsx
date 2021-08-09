@@ -29,12 +29,13 @@ const ManageSponsorPageTemplate = () => {
   const [openAddSponsor, setOpenAddSponsor] = useState(false);
   const [addSponsorForm] = Form.useForm();
   const [addDonateForm] = Form.useForm();
-  const [monthDate, setMonthDate] = useState(moment(new Date()).format('YYYY-MM'));
+  const [monthDate, setMonthDate] = useState(
+    moment(new Date()).format("YYYY-MM")
+  );
 
   useEffect(() => {
     getListSponsor();
   }, [openAddSponsor]);
-
 
   const getListSponsor = async () => {
     try {
@@ -145,37 +146,17 @@ const ManageSponsorPageTemplate = () => {
   };
   const onAddDonateFinish = (values: any) => {
     console.log(values);
-    addDonateForm.resetFields();
     addDonate(values);
-
+    addDonateForm.resetFields();
     setTimeout(() => setOpenAddDonate(false), 1000);
   };
 
-  const handleDetailItem = (e: any, record: any) => {
-    e.preventDefault();
-    sponsorList.forEach((ele) => {
-      localStorage.setItem(
-        "detailSponsorId",
-        JSON.stringify({ id: record.id, name: record.first_name })
-      );
-      router.push("/detail-sponsor");
-      return;
-    });
-  };
   const columns = [
     {
       title: "Firstame",
       dataIndex: "first_name",
       render: (value: string, record: any) => {
-        return (
-          <Button
-            type="primary"
-            style={{ width: "150px" }}
-            onClick={(e) => handleDetailItem(e, record)}
-          >
-            {value}
-          </Button>
-        );
+        return <span>{value}</span>;
       },
       width: "10%",
       key: "first_name",
@@ -212,7 +193,7 @@ const ManageSponsorPageTemplate = () => {
       width: "15%",
     },
     {
-      title: "Thêm thông tin donate",
+      title: `Thêm thông tin donate`,
       key: "action",
       render: (value: string, record: any) => {
         return (
@@ -236,7 +217,7 @@ const ManageSponsorPageTemplate = () => {
 
   const getDonateInfo = async () => {
     let first_last = getWorkSchedule();
-    console.log(first_last)
+    console.log(first_last);
     try {
       let userInfo = JSON.parse(localStorage.getItem("userInfo"));
       // console.log(userInfo.access_token)
@@ -264,28 +245,39 @@ const ManageSponsorPageTemplate = () => {
   const getWorkSchedule = () => {
     let date: any;
     if (monthDate) {
-      date = new Date(`${monthDate.slice(0,4)}-${appendLeadingZeroes(monthDate.slice(5,7))}-05`);
+      date = new Date(
+        `${monthDate.slice(0, 4)}-${appendLeadingZeroes(
+          monthDate.slice(5, 7)
+        )}-05`
+      );
     } else date = new Date();
     var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
     var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    let start = getDateBackend(firstDay)
-      
-    let end = getDateBackend(lastDay)
-    return {start,end};
+    let start = getDateBackend(firstDay);
+
+    let end = getDateBackend(lastDay);
+    return { start, end };
     // console.log(start,end)
-  }
+  };
   const getDateBackend = (date) => {
-    return date.getFullYear() +
+    return (
+      date.getFullYear() +
       "-" +
       appendLeadingZeroes(date.getMonth() + 1) +
       "-" +
-      appendLeadingZeroes(date.getDate());
-  }
+      appendLeadingZeroes(date.getDate())
+    );
+  };
   function appendLeadingZeroes(n) {
     if (n <= 9) {
       return "0" + n;
     }
     return n;
+  }
+
+  const getSponsorAddDonateInfo = () => {
+    let info = JSON.parse(localStorage.getItem('sponsorAddDonateId'))
+    return info.first_name + ' ' + info.last_name;
   }
 
   return (
@@ -294,23 +286,27 @@ const ManageSponsorPageTemplate = () => {
       <ManageSponsorPageComponent className="home-page-container">
         <Row style={{ marginTop: "100px" }} justify="space-around">
           <Col span={5}>
-            <h1 style={{marginLeft:'50px'}}>Danh sách người ủng hộ</h1>
+            <h1 style={{ marginLeft: "50px" }}>Danh sách người ủng hộ</h1>
           </Col>
-          <Col span={9}>
-            
-          </Col>
-          <Col span={10} style={{display:'flex', justifyContent:'space-around', alignItems:'center'}}>
-          <Button onClick={() => setOpenAddSponsor(true)} type="primary">
+          <Col span={9}></Col>
+          <Col
+            span={10}
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <Button onClick={() => setOpenAddSponsor(true)} type="primary">
               Thêm người ủng hộ
-            </Button>
-            {" "}
+            </Button>{" "}
             <DatePicker
               className="select-status"
               onChange={(value, dateString) => {
                 setMonthDate(dateString);
               }}
               defaultValue={moment(new Date())}
-              picker='month'
+              picker="month"
             />
             <Button onClick={() => getDonateInfo()} type="primary">
               Tải về thông tin donate
@@ -324,7 +320,7 @@ const ManageSponsorPageTemplate = () => {
             rowKey="orderId"
             pagination={false}
             scroll={{ x: 768 }}
-            style={{ width: "100%", marginTop:'50px' }}
+            style={{ width: "100%", marginTop: "50px" }}
           />
         </Row>
       </ManageSponsorPageComponent>
@@ -390,13 +386,14 @@ const ManageSponsorPageTemplate = () => {
         </Form>
       </Modal>
       <Modal
-        title="Thêm thông tin donate"
+        title={`Thêm thông tin donate của ${getSponsorAddDonateInfo()}`}
+        // ${JSON.parse(localStorage.getItem("sponsorAddDonateId")).first_name}
         visible={openAddDonate}
         onCancel={handleAddDonateCancel}
         footer={[
           <Button form="addDonateForm" key="submit" htmlType="submit">
             Submit
-          </Button>,
+          </Button>
         ]}
       >
         <Form
