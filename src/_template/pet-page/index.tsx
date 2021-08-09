@@ -160,7 +160,8 @@ const PetTemplate = () => {
                         weight: item.weight,
                         description: item.description,
                         species: item.species,
-                        image: item.images
+                        image: item.images,
+                        sex:item.gender
                     })
                 })
                 setListPet(_item);
@@ -217,7 +218,8 @@ const PetTemplate = () => {
                                     <img style={{marginLeft:"5px",height:"120px",width:"120px",objectFit:"cover",borderRadius:"5px"}} src={pet?.image[0]?.url?pet.image[0].url:"https://i.vimeocdn.com/portrait/1274237_300x300.jpg"}/>
                                     <div style={{marginLeft:"10px",display:"flex",flexDirection:"column",justifyContent:'space-evenly',height:"100%"}}>
                                         <div style={{fontSize:"18px",fontWeight:"bold"}}>{pet?.name}</div>
-                                        <div style={{fontSize:"16px"}}>Giới tính: {getGender(pet?.age)}</div>
+                                        <div style={{fontSize:"16px"}}>Tuổi: {getGender(pet?.age)}</div>
+                                        <div style={{fontSize:"16px"}}>Giới tính: {pet?.sex === "male"?"Đực":"Cái"}</div>
                                         <div style={{fontSize:"16px"}}>Sức khoẻ: {pet?.health_condition}</div>
                                     </div>
                                 </div>
