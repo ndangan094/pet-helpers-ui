@@ -103,8 +103,8 @@ const LoginPageTemplate = () => {
       <Header />
       <div className="wrapper fadeInDown">
         <div id="formContent">
-          <h2 className="active"> Sign In </h2>
-          <h2 onClick={toSignUp} className="inactive underlineHover" >Sign Up </h2>
+          <h2 className="active"> Đăng nhập </h2>
+          <h2 onClick={toSignUp} className="inactive underlineHover" >Đăng ký </h2>
           <div className="fadeIn first">
           </div>
           <form onSubmit={handleSubmit}>
@@ -113,7 +113,7 @@ const LoginPageTemplate = () => {
               id="login"
               className="fadeIn second"
               name="login"
-              placeholder="username"
+              placeholder="Tên đăng nhập"
               defaultValue=''
               onChange={(event) => setUsername(event.target.value)}
               required
@@ -123,17 +123,17 @@ const LoginPageTemplate = () => {
               id="password"
               className="fadeIn third"
               name="login"
-              placeholder="password"
+              placeholder="Mật khẩu"
               defaultValue=''
               onChange={(event) => setPassword(md5(event.target.value))}
               required
             />
-            <input type="submit" className="fadeIn fourth" value="Log In" />
+            <input type="submit" className="fadeIn fourth" value="Đăng nhập" />
           </form>
 
           <div id="formFooter">
             <a className="underlineHover" href="#">
-              Forgot Password?
+              Quên mật khẩu?
             </a>
           </div>
         </div>

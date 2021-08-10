@@ -85,12 +85,12 @@ const UserInfoPage = () => {
         <InfoRoot>
             <InfoContainer>
                 <Text>
-                    User Information
+                    Thông tin cá nhân
                 </Text>
                 <div style={{height: "30px"}}/>
                 <RowLine>
                     <Left>
-                        First name:
+                        Họ:
                     </Left>
                     <Right onChange={(e) => {
                         userFromServer.first_name = e.target.value;
@@ -99,7 +99,7 @@ const UserInfoPage = () => {
                 </RowLine>
                 <RowLine>
                     <Left>
-                        Last name:
+                        Tên:
                     </Left>
                     <Right onChange={(e) => {
                         userFromServer.last_name = e.target.value;
@@ -108,7 +108,7 @@ const UserInfoPage = () => {
                 </RowLine>
                 <RowLine>
                     <Left>
-                        Username:
+                        Tên đăng nhập:
                     </Left>
                     <Right defaultValue={userFromServer?.username} readOnly/>
                 </RowLine>
@@ -123,7 +123,7 @@ const UserInfoPage = () => {
                 </RowLine>
                 <RowLine>
                     <Left>
-                        Phone number:
+                        Số điện thoại:
                     </Left>
                     <Right onChange={(e) => {
                         userFromServer.phone_number = e.target.value;
@@ -138,7 +138,7 @@ const UserInfoPage = () => {
                 <SubmitButton onClick={async () => {
                     await changeUserInfo();
                 }}>
-                    Submit
+                    Cập nhật
                 </SubmitButton>
             </InfoContainer>
         </InfoRoot>
