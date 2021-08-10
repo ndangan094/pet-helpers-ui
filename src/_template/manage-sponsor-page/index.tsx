@@ -213,7 +213,7 @@ const ManageSponsorPageTemplate = () => {
       width: "15%",
     },
     {
-      title: `Thêm thông tin donate`,
+      title: `Thêm thông tin ủng hộ`,
       key: "action",
       render: (value: string, record: any) => {
         return (
@@ -414,7 +414,7 @@ const ManageSponsorPageTemplate = () => {
         </Form>
       </Modal>
       <Modal
-        title={`Thêm thông tin donate của ${getSponsorAddDonateInfo()}`}
+        title={`Thêm thông tin ủng hộ của ${getSponsorAddDonateInfo()}`}
         // ${JSON.parse(localStorage.getItem("sponsorAddDonateId")).first_name}
         visible={openAddDonate}
         onCancel={handleAddDonateCancel}
