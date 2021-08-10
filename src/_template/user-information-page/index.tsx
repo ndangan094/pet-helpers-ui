@@ -85,7 +85,7 @@ const UserInfoPage = () => {
         <InfoRoot>
             <InfoContainer>
                 <Text>
-                    User Information
+                    Thông tin cá nhân
                 </Text>
                 <div style={{height: "30px"}}/>
                 <RowLine>
