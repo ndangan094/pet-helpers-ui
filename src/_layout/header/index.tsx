@@ -69,12 +69,12 @@ const Header: React.FC = () => {
                             </>
                         ) : (<>
                             <Welcome>{"Xin chào, " + ((!user.first_name)?user.username : (user.first_name + " " + user.last_name))}</Welcome>
-                            {user.role === "admin" || user.role === 'volunteer' ? <ActionButton onClick={() => router.push("/dashboard")} >Dashboard</ActionButton> : null}
+                            {user.role === "admin" || user.role === 'volunteer' ? <ActionButton onClick={() => router.push("/dashboard")} >Quản lý</ActionButton> : null}
                             <ActionButton onClick={() => router.push("/user")}>
-                                Info
+                                Thông tin
                             </ActionButton>
                             <ActionButton onClick={() => logout()}>
-                                Log out
+                                Đăng xuất
                             </ActionButton>
                         </>)
                     }
