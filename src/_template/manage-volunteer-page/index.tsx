@@ -125,7 +125,7 @@ const ManageVolunteerPageTemplate = () => {
   };
   const columns = [
     {
-      title: "Username",
+      title: "Tên người dùng",
       dataIndex: "username",
       render: (value: string, record: any) => {
         if (record.role === "volunteer") {
@@ -156,7 +156,7 @@ const ManageVolunteerPageTemplate = () => {
     },
 
     {
-      title: "First Name",
+      title: "Tên",
       dataIndex: "first_name",
       sorter: true,
       render: (text) => <span>{text}</span>,
@@ -164,7 +164,7 @@ const ManageVolunteerPageTemplate = () => {
       key: "first_name",
     },
     {
-      title: "Last Name",
+      title: "Họ",
       dataIndex: "last_name",
       sorter: false,
       render: (text) => <span>{text}</span>,
@@ -179,7 +179,7 @@ const ManageVolunteerPageTemplate = () => {
       key: "email",
     },
     {
-      title: "Role",
+      title: "Vị trí",
       dataIndex: "role",
       key: "role",
 
@@ -212,7 +212,7 @@ const ManageVolunteerPageTemplate = () => {
     },
 
     {
-      title: "Action",
+      title: "Sửa vị trí",
       key: "action",
       render: (value: string, record: any) => {
         if (record.role === "admin") {

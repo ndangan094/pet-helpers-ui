@@ -124,7 +124,7 @@ const DashboardTemplate = () => {
 
         {user?.role === "admin" ? (
           <>
-          <PetTag onClick={handleVolunteer}>Tình nguyện viên</PetTag>
+          <PetTag onClick={handleVolunteer}>Quản lý người dùng</PetTag>
           <PetTag
           onClick={() => {
             router.push("/manage-sponsor");
