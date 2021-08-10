@@ -451,7 +451,7 @@ const ManageSponsorPageTemplate = () => {
             name="donations"
             rules={[{ required: true, message: "Vui lòng nhập dữ liệu" }]}
           >
-            <Input />
+            <Input suffix='VND'/>
           </Form.Item>
         </Form>
       </Modal>
