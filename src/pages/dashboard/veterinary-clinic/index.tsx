@@ -4,7 +4,7 @@ import VeterinaryTemplate from "../../../_template/veterinary-page"
 const Veterinary = () =>{
     return <>
         <Head>
-            <title>Veterinary</title>
+            <title>Thú y</title>
         </Head>
         <VeterinaryTemplate/>
     </>

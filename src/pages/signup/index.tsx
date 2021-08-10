@@ -5,7 +5,7 @@ const SignUp = () => {
     return (
         <>
             <Head>
-                <title>Sign Up</title>
+                <title>Đăng ký người dùng</title>
             </Head>
             <SignUpPageTemplate/>
         </>

@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <>
             <Head>
-                <title>Login</title>
+                <title>Đăng nhập</title>
             </Head>
             <LoginPageTemplate/>
         </>

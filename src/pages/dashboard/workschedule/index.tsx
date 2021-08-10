@@ -5,7 +5,7 @@ const DashBoard = () => {
     return (
         <>
             <Head>
-                <title>Work Schedule Manager</title>
+                <title>Quản Lý Lịch Làm Việc</title>
             </Head>
             <WorkTemplate/>
         </>

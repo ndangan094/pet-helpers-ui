@@ -242,7 +242,7 @@ const ManageVolunteerPageTemplate = () => {
       <Header />
       <ManageVolunteerPageComponent className="home-page-container">
         <Row style={{ marginTop: "100px" }} justify="center">
-          <h1>Danh sách User</h1>
+          <h1>Danh sách người dùng</h1>
         </Row>
         <Table
           columns={columns}

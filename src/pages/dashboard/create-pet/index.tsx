@@ -5,7 +5,7 @@ const PetDetail = () => {
     return (
         <>
             <Head>
-                <title>Detail</title>
+                <title>Thêm thú cưng mới</title>
             </Head>
             <CreatePetTempalte/>
         </>

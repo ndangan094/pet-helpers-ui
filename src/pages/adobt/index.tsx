@@ -6,7 +6,7 @@ const Adobt = () => {
   return (
     <>
         <Head>
-           <title>Pet Adobtion</title>
+           <title>Nhận nuôi</title>
         </Head>
       <AdobtPageTemplate/>
     </>

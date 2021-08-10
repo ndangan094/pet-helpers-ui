@@ -6,7 +6,7 @@ const Donate = () => {
   return (
     <>
         <Head>
-           <title>Donate Us</title>
+           <title>Ủng hộ bọn mình</title>
         </Head>
       <DonatePageTemplate/>
     </>

@@ -6,7 +6,7 @@ const PetDetail = () => {
     return (
         <>
             <Head>
-                <title>Chi tiết</title>
+                <title>Chi tiết thú cưng</title>
             </Head>
             <PetDetailTempalte/>
         </>

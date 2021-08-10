@@ -5,7 +5,7 @@ const VolunteerDetail = () => {
     return (
         <>
             <Head>
-                <title>Volunteer Detail</title>
+                <title>Lịch làm việc của tình nguyện viên</title>
             </Head>
             <DetailVolunteerPageTemplate/>
         </>

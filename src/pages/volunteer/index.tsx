@@ -6,7 +6,7 @@ const Volunteer = () => {
   return (
     <>
         <Head>
-           <title>Become a Volunteer</title>
+           <title>Trở thành Tình nguyện viên</title>
         </Head>
       <VolunteerPageTemplate/>
     </>

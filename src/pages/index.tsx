@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
         <Head>
-           <title>Pet Secure</title>
+           <title>Pet Rescure</title>
         </Head>
       <HomePageTemplate/>
     </>

@@ -5,7 +5,7 @@ const DashBoard = () => {
     return (
         <>
             <Head>
-                <title>DashBoard</title>
+                <title>Bảng điều khiển</title>
             </Head>
             <DashboardTemplate/>
         </>

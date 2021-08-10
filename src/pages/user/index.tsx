@@ -5,7 +5,7 @@ const UserPage = () => {
     return (
         <>
             <Head>
-                <title>Information</title>
+                <title>Thông tin của bạn</title>
             </Head>
             <UserInfoPage/>
 

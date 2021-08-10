@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
         <Head>
-           <title>Volunteer management</title>
+           <title>Quản lý tình nguyện viên</title>
         </Head>
       <ManageVolunteerPageTemplate/>
     </>

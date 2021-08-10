@@ -4,7 +4,7 @@ import AdobtDetailTemplate from "../../../_template/adobt-detail/index"
 const AdobtDetail = () =>{
     return <>
         <Head>
-            <title>Detail</title>
+            <title>Thông tin của bé</title>
         </Head>
         <AdobtDetailTemplate/>
     </>

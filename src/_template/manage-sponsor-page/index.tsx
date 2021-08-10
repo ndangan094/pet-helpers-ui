@@ -173,7 +173,7 @@ const ManageSponsorPageTemplate = () => {
 
   const columns = [
     {
-      title: "Firstame",
+      title: "Tên",
       dataIndex: "first_name",
       render: (value: string, record: any) => {
         return <span>{value}</span>;
@@ -182,7 +182,7 @@ const ManageSponsorPageTemplate = () => {
       key: "first_name",
     },
     {
-      title: "Last Name",
+      title: "Họ",
       dataIndex: "last_name",
       sorter: false,
       render: (text) => <span>{text}</span>,
@@ -197,7 +197,7 @@ const ManageSponsorPageTemplate = () => {
       key: "email",
     },
     {
-      title: "Address",
+      title: "Địa chỉ",
       dataIndex: "address",
       key: "address",
 
@@ -205,7 +205,7 @@ const ManageSponsorPageTemplate = () => {
       width: "30%",
     },
     {
-      title: "Phone number",
+      title: "Số điện thoại",
       dataIndex: "phone_number",
       key: "phone_number",
 

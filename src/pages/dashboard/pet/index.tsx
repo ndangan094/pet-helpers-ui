@@ -5,7 +5,7 @@ const DashBoard = () => {
     return (
         <>
             <Head>
-                <title>Pet Manager</title>
+                <title>Quản lý thú cưng</title>
             </Head>
             <PetTemplate/>
         </>

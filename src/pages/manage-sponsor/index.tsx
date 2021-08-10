@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
         <Head>
-           <title>Sponsor management</title>
+           <title>Quản lý người ủng hộ</title>
         </Head>
       <ManageSponsorPageTemplate/>
     </>
