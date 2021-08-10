@@ -7,7 +7,7 @@ import globalStyles from "./style.js";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-
+import md5 from 'md5';
 
 const SignUpPageTemplate = () => {
   const [email, setEmail] = useState('');
@@ -36,7 +36,7 @@ const SignUpPageTemplate = () => {
       },
       body: JSON.stringify({
         "username": username,
-        "password": password,
+        "password": md5(password),
         "first_name": "",
         "last_name": "",
         "email": email,

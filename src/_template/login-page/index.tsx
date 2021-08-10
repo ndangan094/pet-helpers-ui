@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
 import {User} from "../../models/user";
+import md5 from 'md5';
 
 const LoginPageTemplate = () => {
   const [username, setUsername] = useState('');
@@ -124,7 +125,7 @@ const LoginPageTemplate = () => {
               name="login"
               placeholder="password"
               defaultValue=''
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(event) => setPassword(md5(event.target.value))}
               required
             />
             <input type="submit" className="fadeIn fourth" value="Log In" />

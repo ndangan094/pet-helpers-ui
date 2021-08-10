@@ -13,6 +13,7 @@ import Header from "../../_layout/header";
 import Footer from "../../_layout/footer";
 import axios from "axios";
 import {useRouter} from "next/router";
+import md5 from 'md5';
 
 const UpdatePasswordTemplate = () => {
     const router = useRouter();
@@ -102,7 +103,7 @@ const UpdatePasswordTemplate = () => {
                     </Left>
                     <Right type={"password"} onChange={(e) => {
                         setError("");
-                        setCurrentPassword(e.target.value);
+                        setCurrentPassword(md5(e.target.value));
 
                     }}/>
                 </RowLine>
@@ -112,7 +113,7 @@ const UpdatePasswordTemplate = () => {
                     </Left>
                     <Right type={"password"} onChange={(e) => {
                         setError("");
-                        setNewPassword(e.target.value);
+                        setNewPassword(md5(e.target.value));
                     }}/>
                 </RowLine>
                 <RowLine>
@@ -121,7 +122,7 @@ const UpdatePasswordTemplate = () => {
                     </Left>
                     <Right type={"password"} onChange={(e) => {
                         setError("");
-                        setConfirmPassword(e.target.value);
+                        setConfirmPassword(md5(e.target.value));
                     }}/>
                 </RowLine>
                 <div style={{color: "red", fontSize: "16px"}}>{error}</div>
