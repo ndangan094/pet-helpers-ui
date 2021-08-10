@@ -73,8 +73,8 @@ const SignUpPageTemplate = () => {
 
       <div className="wrapper fadeInDown">
         <div id="formContent">
-          <h2 onClick={toLogin} className="inactive underlineHover"> Sign In </h2>
-          <h2 className="active" >Sign Up </h2>
+          <h2 onClick={toLogin} className="inactive underlineHover"> Đăng nhập </h2>
+          <h2 className="active" >Đăng ký </h2>
           <div className="fadeIn first">
           </div>
           <form onSubmit={handleSubmit}>
@@ -83,7 +83,7 @@ const SignUpPageTemplate = () => {
               id="email"
               className="fadeIn first"
               name="signup"
-              placeholder="email"
+              placeholder="Email"
               defaultValue=''
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -93,7 +93,7 @@ const SignUpPageTemplate = () => {
               id="username"
               className="fadeIn second"
               name="signup"
-              placeholder="username"
+              placeholder="Tên đăng nhập"
               defaultValue=''
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -104,7 +104,7 @@ const SignUpPageTemplate = () => {
               id="password"
               className="fadeIn third"
               name="signup"
-              placeholder="password"
+              placeholder="Mật khẩu"
               defaultValue=''
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -115,18 +115,18 @@ const SignUpPageTemplate = () => {
               id="repassword"
               className="fadeIn third"
               name="signup"
-              placeholder="re-password"
+              placeholder="Mật khẩu xác nhận"
               defaultValue=''
               onChange={(e) => setRepassword(e.target.value)}
               required
 
             />
-            <input type="submit" className="fadeIn fourth" value="Sign Up" />
+            <input type="submit" className="fadeIn fourth" value="Đăng ký" />
           </form>
 
           <div id="formFooter">
             <a className="underlineHover" href="#">
-              Have fun :)))
+              Quên mật khẩu?
             </a>
           </div>
         </div>

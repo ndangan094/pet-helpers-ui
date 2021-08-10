@@ -62,13 +62,13 @@ const Header: React.FC = () => {
                     {user == undefined ?
                         (<>
                                 <ActionButton>
-                                    <Link href={`/login`}>Login</Link>
+                                    <Link href={`/login`}>Đăng nhập</Link>
                                 </ActionButton>
-                                <ActionButton> <Link href={`/signup`}>Sign Up</Link>
+                                <ActionButton> <Link href={`/signup`}>Đăng ký</Link>
                                 </ActionButton>
                             </>
                         ) : (<>
-                            <Welcome>{"Welcome, " + ((!user.first_name)?user.username : (user.first_name + " " + user.last_name))}</Welcome>
+                            <Welcome>{"Xin chào, " + ((!user.first_name)?user.username : (user.first_name + " " + user.last_name))}</Welcome>
                             {user.role === "admin" || user.role === 'volunteer' ? <ActionButton onClick={() => router.push("/dashboard")} >Dashboard</ActionButton> : null}
                             <ActionButton onClick={() => router.push("/user")}>
                                 Info
